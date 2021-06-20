@@ -26,7 +26,7 @@ def index():
 
         visitorIP = potentIPList[len(potentIPList)-1]
 
-        cur.execute('INSERT INTO connections (date, ip) VALUES ("' + str(date.today()) + '", "' + visitorIP + '")')
+        cur.execute('INSERT INTO connections (date, ip) VALUES (%s, %s)', (date.today(), visitorIP))
 
         conn.commit()
 
