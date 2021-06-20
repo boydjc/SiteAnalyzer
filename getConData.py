@@ -17,7 +17,7 @@ def index():
 
     visitorIP = potentIPList[len(potentIPList)-1]
 
-    cur.execute('INSERT INTO connections ("' + date.today() + '", "' + visitorIP + ')')
+    cur.execute('INSERT INTO connections ("' + str(date.today()) + '", "' + visitorIP + ')')
 
     return "Visitor IP stored"
 
