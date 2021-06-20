@@ -7,7 +7,7 @@ import psycopg2
 app = Flask(__name__)
 databaseUrl = os.environ['DATABASE_URL']
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET','POST'])
 def index():
 
     conn = psycopg2.connect(databaseUrl, sslmode='require')
