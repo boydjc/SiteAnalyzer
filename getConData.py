@@ -14,7 +14,7 @@ def index():
 
         if(request.method == 'POST'):
 
-            cur.execute('''CREATE TABLE connections (date text, ip text)''')
+            cur.execute('CREATE TABLE connections (date text, ip text)')
 
             potentIPs = request.headers.getlist("X-Forwarded-For")[0]
 
