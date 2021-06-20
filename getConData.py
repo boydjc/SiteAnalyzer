@@ -1,5 +1,6 @@
 from flask import Flask, request
 from datetime import date
+import pandas as pd
 import sqlite3
 
 app = Flask(__name__)
@@ -11,19 +12,30 @@ def index():
 
         cur = con.cursor()
 
-        cur.execute('''CREATE TABLE connections (date text, ip text)''')
+        if(request.method == 'POST'):
 
-        potentIPs = request.headers.getlist("X-Forwarded-For")[0]
+            cur.execute('''CREATE TABLE connections (date text, ip text)''')
 
-        potentIPList = potentIPs.split(',')
+            potentIPs = request.headers.getlist("X-Forwarded-For")[0]
 
-        visitorIP = potentIPList[len(potentIPList)-1]
+            potentIPList = potentIPs.split(',')
 
-        cur.execute('INSERT INTO connections VALUES ("' + str(date.today()) + '", "' + visitorIP + '")')
+            visitorIP = potentIPList[len(potentIPList)-1]
 
-        con.commit()
+            cur.execute('INSERT INTO connections VALUES ("' + str(date.today()) + '", "' + visitorIP + '")')
 
-        return "Visitor IP stored"
+            con.commit()
+
+            return "Visitor IP stored"
+
+        else if(request.method == 'GET'):
+            
+            cur.execute("SELECT * FROM connections")
+
+            connData = cur.fetchall()
+
+            return connData
+
 
 if __name__ == "__main__":
     app.run();
