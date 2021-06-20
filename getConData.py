@@ -1,5 +1,5 @@
 from flask import Flask, request
-from datetime import datetime
+from datetime import date
 import sqlite3
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def index():
 
     visitorIP = potentIPList[len(potentIPList)-1]
 
-    cur.execute('INSERT INTO connections ("' + datetime.date() + '", "' + visitorIP + ')')
+    cur.execute('INSERT INTO connections ("' + date.today() + '", "' + visitorIP + ')')
 
     return "Visitor IP stored"
 
