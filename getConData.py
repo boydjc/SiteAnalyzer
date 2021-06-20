@@ -3,23 +3,27 @@ from datetime import date
 import sqlite3
 
 app = Flask(__name__)
-con = sqlite3.connect('conData.db')
-cur = con.cursor()
 
 @app.route('/', methods=['GET'])
 def index():
 
-    cur.execute('''CREATE TABLE connections (date text, ip text)''')
+    with sqlite3.connect("connData.db") as con:
 
-    potentIPs = request.headers.getlist("X-Forwarded-For")[0]
+        cur = con.cursor()
 
-    potentIPList = potentIPs.split(',')
+        cur.execute('''CREATE TABLE connections (date text, ip text)''')
 
-    visitorIP = potentIPList[len(potentIPList)-1]
+        potentIPs = request.headers.getlist("X-Forwarded-For")[0]
 
-    cur.execute('INSERT INTO connections ("' + str(date.today()) + '", "' + visitorIP + '")')
+        potentIPList = potentIPs.split(',')
 
-    return "Visitor IP stored"
+        visitorIP = potentIPList[len(potentIPList)-1]
+
+        cur.execute('INSERT INTO connections ("' + str(date.today()) + '", "' + visitorIP + '")')
+
+        con.close();
+
+        return "Visitor IP stored"
 
 if __name__ == "__main__":
     app.run();
