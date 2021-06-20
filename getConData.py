@@ -9,8 +9,7 @@ def index():
 
     headers = request.headers
 
-    #return "Visitor IP: " + visitorIP;
-    return str(headers)
+    return "Visitor IP: " + visitorIP;
 
 if __name__ == "__main__":
     app.run();
