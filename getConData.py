@@ -21,7 +21,9 @@ def index():
 
         cur.execute('INSERT INTO connections VALUES ("' + str(date.today()) + '", "' + visitorIP + '")')
 
-        con.close();
+        con.commit()
+
+        con.close()
 
         return "Visitor IP stored"
 
