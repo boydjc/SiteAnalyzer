@@ -1,40 +1,46 @@
 from flask import Flask, request
 from datetime import date
 import pandas as pd
-import sqlite3
+import os
+import psycopg2
 
 app = Flask(__name__)
+databaseUrl = os.environ['DATABASE_URL']
 
 @app.route('/', methods=['GET'])
 def index():
 
-    with sqlite3.connect("connData.db") as con:
+    conn = psycopg2.connect(databaseUrl, sslmode='require')
 
-        cur = con.cursor()
+    cur = conn.cursor()
 
-        if(request.method == 'POST'):
+    if(request.method == 'POST'):
 
-            cur.execute('CREATE TABLE connections (date text, ip text)')
+        cur.execute('CREATE TABLE connections (date text, ip text)')
 
-            potentIPs = request.headers.getlist("X-Forwarded-For")[0]
+        potentIPs = request.headers.getlist("X-Forwarded-For")[0]
 
-            potentIPList = potentIPs.split(',')
+        potentIPList = potentIPs.split(',')
 
-            visitorIP = potentIPList[len(potentIPList)-1]
+        visitorIP = potentIPList[len(potentIPList)-1]
 
-            cur.execute('INSERT INTO connections VALUES ("' + str(date.today()) + '", "' + visitorIP + '")')
+        cur.execute('INSERT INTO connections VALUES ("' + str(date.today()) + '", "' + visitorIP + '")')
 
-            con.commit()
+        conn.commit()
 
-            return "Visitor IP stored"
+        conn.close()
 
-        elif(request.method == 'GET'):
+        return "Visitor IP stored"
+
+    elif(request.method == 'GET'):
             
-            cur.execute("SELECT * FROM connections")
+        cur.execute("SELECT * FROM connections")
 
-            connData = cur.fetchall()
+        connData = cur.fetchall()
 
-            return connData
+        conn.close()
+
+        return connData
 
 
 if __name__ == "__main__":
