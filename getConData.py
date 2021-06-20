@@ -23,8 +23,6 @@ def index():
 
         con.commit()
 
-        con.close()
-
         return "Visitor IP stored"
 
 if __name__ == "__main__":
