@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    visitorIP = request.headers.getlist("X-Forwarded-For")[len(request.headers.getlist("X-Forwarded-For")-1)]
+    visitorIP = request.headers.getlist("X-Forwarded-For")[len(request.headers.getlist("X-Forwarded-For"))-1]
 
     headers = request.headers
 
