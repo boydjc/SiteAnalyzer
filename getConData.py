@@ -16,7 +16,7 @@ def index():
 
     if(request.method == 'POST'):
 
-        cur.execute('CREATE TABLE connections (date text, ip text)')
+        cur.execute('CREATE TABLE IF NOT EXISTS connections (date text, ip text)')
 
         print("Table created")
 
