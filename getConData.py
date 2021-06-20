@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    visitorIP = flask.request.remote_addr
+    visitorIP = request.remote_addr
     return "Visitor IP: " + visitorIP;
 
 if __name__ == "__main__":
