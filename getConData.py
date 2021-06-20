@@ -4,6 +4,7 @@ import sqlite3
 
 app = Flask(__name__)
 con = sqlite3.connect('conData.db')
+cur = con.cursor()
 
 @app.route('/', methods=['GET'])
 def index():
