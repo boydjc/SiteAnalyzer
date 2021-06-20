@@ -43,7 +43,7 @@ def index():
         cur.close()
         conn.close()
 
-        return connData
+        return str(connData)
 
 
 if __name__ == "__main__":
