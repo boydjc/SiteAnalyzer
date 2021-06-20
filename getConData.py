@@ -18,6 +18,8 @@ def index():
 
         cur.execute('CREATE TABLE connections (date text, ip text)')
 
+        print("Table created")
+
         potentIPs = request.headers.getlist("X-Forwarded-For")[0]
 
         potentIPList = potentIPs.split(',')
