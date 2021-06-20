@@ -9,4 +9,4 @@ def index():
     return "Visitor IP: " + visitorIP;
 
 if __name__ == "__main__":
-    app.run():
+    app.run();
