@@ -10,7 +10,7 @@ def index():
     headers = request.headers
 
     #return "Visitor IP: " + visitorIP;
-    return tuple(headers)
+    return str(headers)
 
 if __name__ == "__main__":
     app.run();
