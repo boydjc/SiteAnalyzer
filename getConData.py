@@ -28,7 +28,7 @@ def index():
 
             return "Visitor IP stored"
 
-        else if(request.method == 'GET'):
+        elif(request.method == 'GET'):
             
             cur.execute("SELECT * FROM connections")
 
