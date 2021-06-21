@@ -1,2 +1,5 @@
-# getConData
-Python application to get connection data from POST requests
+# SiteAnalyzer
+Python Flask app that is used to look at the traffic to my developer site.
+
+
+
