@@ -1,4 +1,5 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
+from app import app
 from datetime import date
 import pandas as pd
 import os
@@ -47,19 +48,9 @@ def index():
 
         #return str(connData)
 
-        return '''
-            <html>
-                <head>
-                    <title>Boydjc Site Analytics</title>
-                    <h1>
-                        Hello ''' + user['username'] + '''
-                    </h1>
-                </head>
-            </html>
-        '''
+        return render_template('index.html', user=user) 
 
-
-
+from app import routes
 
 if __name__ == "__main__":
     app.run();
