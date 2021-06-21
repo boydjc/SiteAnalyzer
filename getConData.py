@@ -10,6 +10,8 @@ databaseUrl = os.environ['DATABASE_URL']
 @app.route('/', methods=['GET','POST'])
 def index():
 
+    user = {'username': 'Joshua'}
+
     conn = psycopg2.connect(databaseUrl, sslmode='require')
 
     cur = conn.cursor()
@@ -36,14 +38,28 @@ def index():
 
     elif(request.method == 'GET'):
             
-        cur.execute("SELECT * FROM connections")
+        #cur.execute("SELECT * FROM connections")
 
-        connData = cur.fetchall()
+        #connData = cur.fetchall()
 
-        cur.close()
-        conn.close()
+        #cur.close()
+        #conn.close()
 
-        return str(connData)
+        #return str(connData)
+
+        return '''
+            <html>
+                <head>
+                    <title>Boydjc Site Analytics</title>
+                    <h1>
+                        Hello ''' + user['username'] + '''
+                    </h1>
+                </head>
+            </html>
+        '''
+
+# imported here for circular routes
+from app import routes
 
 
 if __name__ == "__main__":
