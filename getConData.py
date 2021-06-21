@@ -58,8 +58,7 @@ def index():
             </html>
         '''
 
-# imported here for circular routes
-from app import routes
+
 
 
 if __name__ == "__main__":
