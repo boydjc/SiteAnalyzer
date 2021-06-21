@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from app import app
 from datetime import date
 import pandas as pd
 import os
@@ -49,8 +48,6 @@ def index():
         #return str(connData)
 
         return render_template('index.html', user=user) 
-
-from app import routes
 
 if __name__ == "__main__":
     app.run();
