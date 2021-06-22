@@ -7,15 +7,16 @@
 	<h1>Please Login</h1>
 	<div id="loginForm">
 	    <form action="" method="post" novalidate>
-	        <label id="usernameLabel" for="formUsername">Username </label>
-	        <input type="test" id="formUsername" name="formUsername">
+		{{ form.username.label }}
+		{{ form.username(size=32) }}
 	        </br>
 	        </br>
-		<label id="passwordLabel" for="formPassword">Password </label>
-	        <input type="password" id="formPassword" name="formPassword">
+		{{ form.password.label }}
+		{{ form.password)size=32) }}
 	        </br>
 	        </br>
-	        <input id="submit" type="submit" value="Submit">
+		{{ form.remember_me() }} {{ form.remember_me.label }}
+		{{ form.submit() }}
 	    </form>
 	</div>
     </body>
