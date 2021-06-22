@@ -1,0 +1,47 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+h1 {
+    margin-left: 18.2em;
+    margin-top: 2em;
+    animation-name: fadeIn;
+    animation-delay: 0.2s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
+#loginForm {
+    border: 2px solid #000000;
+    border-radius: 2em;
+    height: 12em;
+    width: 22em;
+    margin-left: 31em;
+    animation-name: fadeIn;
+    animation-delay: 0.4s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
+form {
+    margin-top: 2em;
+    margin-left: 1.5em;
+}
+
+form label {
+    font-size: 1.5em;
+}
+
+form input[type=submit] {
+    width: 6em;
+    height: 2em;
+    margin-left: 5.7em;
+    font-size: 1.1em;
+}
