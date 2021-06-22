@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from loginForm import LoginForm
 from datetime import date
 import pandas as pd
 import os
@@ -37,7 +38,9 @@ def index():
         return "Visitor IP stored"
 
     elif(request.method == 'GET'):
-            
+        
+        # login page
+        
         #cur.execute("SELECT * FROM connections")
 
         #connData = cur.fetchall()
@@ -47,7 +50,12 @@ def index():
 
         #return str(connData)
 
-        return render_template('index.html', user=user) 
+        form = LoginForm()
+
+        return render_template('index.html', user=user, form=form)
+
+
+
 
 if __name__ == "__main__":
     app.run();
