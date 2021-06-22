@@ -3,6 +3,19 @@
 	<title>Dev Site Analyzer</title>
     </head>
     <body>
-	<h1>Hello, {{ user.username}}</h1>
+	<h1>Hello. Please Login</h1>
+	<div id="loginForm">
+	    <form action="" method="post" novalidate>
+	        <label id="usernameLabel" for="formUsername">Username</label>
+	        <input type="test" id="formUsername" name="formUsername">
+	        </br>
+	        </br>
+	        <label id="passwordLabel" for="formPassword" name="formPassword">
+	        <input type="password" id="formPassword" name="formPassword">
+	        </br>
+	        </br>
+	        <input id="submit" type="submit" value="Submit">
+	    </form>
+	</div>
     </body>
 </html>
