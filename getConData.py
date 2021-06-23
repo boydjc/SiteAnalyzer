@@ -58,6 +58,8 @@ def index():
         #conn.close()
 
         #return str(connData)
+
+        pass
     
     return render_template('index.html', user=user, form=form)
 
