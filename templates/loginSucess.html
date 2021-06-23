@@ -3,7 +3,7 @@
 	<title>Dev Site Analyzer</title>
     </head>
     <body>
-	{% with messages = get_flashed_message() %}
+	{% with messages = get_flashed_messages() %}
 	{% if messages %}
 	    <ul>
 		{% for message in messages %}
