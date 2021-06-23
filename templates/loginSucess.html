@@ -1,0 +1,16 @@
+<html>
+    <head>
+	<title>Dev Site Analyzer</title>
+    </head>
+    <body>
+	{% with messages = get_flashed_message() %}
+	{% if messages %}
+	    <ul>
+		{% for message in messages %}
+		    <li>{{message}}</li>
+		{% endfor %}
+	    </ul>
+	{% endif %}
+	{% endwith %}
+    </body>
+</html>

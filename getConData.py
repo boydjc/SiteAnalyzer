@@ -14,29 +14,37 @@ def index():
 
     user = {'username': 'Joshua'}
 
-    conn = psycopg2.connect(databaseUrl, sslmode='require')
+    form = LoginForm()
 
-    cur = conn.cursor()
+    #conn = psycopg2.connect(databaseUrl, sslmode='require')
+
+    #cur = conn.cursor()
 
     if(request.method == 'POST'):
 
-        cur.execute('CREATE TABLE IF NOT EXISTS connections (date text, ip text)')
+        if(form.validate_on_submit()):
+            flash('Login Requested for user {}, rememberMe={}'.format(
+                form.username.data, form.rememberMe.data))
+            return redirect('/success')
 
-        print("Table created")
 
-        potentIPs = request.headers.getlist("X-Forwarded-For")[0]
+        #cur.execute('CREATE TABLE IF NOT EXISTS connections (date text, ip text)')
 
-        potentIPList = potentIPs.split(',')
+        #print("Table created")
 
-        visitorIP = potentIPList[len(potentIPList)-1]
+        #potentIPs = request.headers.getlist("X-Forwarded-For")[0]
 
-        cur.execute('INSERT INTO connections (date, ip) VALUES (%s, %s)', (date.today(), visitorIP))
+        #potentIPList = potentIPs.split(',')
 
-        conn.commit()
+        #visitorIP = potentIPList[len(potentIPList)-1]
 
-        conn.close()
+        #cur.execute('INSERT INTO connections (date, ip) VALUES (%s, %s)', (date.today(), visitorIP))
 
-        return "Visitor IP stored"
+        #conn.commit()
+
+        #conn.close()
+
+        #return "Visitor IP stored"
 
     elif(request.method == 'GET'):
         
@@ -50,13 +58,14 @@ def index():
         #conn.close()
 
         #return str(connData)
-
-        form = LoginForm()
-
-        return render_template('index.html', user=user, form=form)
+    
+    return render_template('index.html', user=user, form=form)
 
 
+@app.route('/success', methods=['Get'])
+def success():
 
+    return render_template('loginSucess.html')
 
 if __name__ == "__main__":
     app.run();
