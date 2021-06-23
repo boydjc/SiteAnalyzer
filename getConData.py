@@ -7,6 +7,7 @@ import psycopg2
 
 app = Flask(__name__)
 databaseUrl = os.environ['DATABASE_URL']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 @app.route('/', methods=['GET','POST'])
 def index():
