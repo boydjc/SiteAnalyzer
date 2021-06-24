@@ -8,6 +8,10 @@
     }
 }
 
+.errorLog {
+    color: red;
+    margin-top: 0.5em;
+}
 
 h1 {
     margin-left: 18.2em;
