@@ -67,7 +67,7 @@ def index():
 @app.route('/success', methods=['Get'])
 def success():
 
-    return render_template('loginSucess.html')
+    return render_template('loginSuccess.html')
 
 if __name__ == "__main__":
     app.run();

@@ -21,7 +21,7 @@ h1 {
 #loginForm {
     border: 2px solid #000000;
     border-radius: 2em;
-    height: 17em;
+    height: 19em;
     width: 21em;
     margin-left: 31em;
     animation-name: fadeIn;
@@ -36,12 +36,12 @@ form {
 }
 
 form label {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 form input[type=submit] {
-    width: 6em;
-    height: 2em;
+    width: 5em;
+    height: 1.5em;
     margin-left: 5.7em;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
