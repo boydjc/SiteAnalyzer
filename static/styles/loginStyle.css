@@ -43,7 +43,7 @@ form label {
 }
 
 form input[type=text], form input[type=password] {
-    padding-bottom: 1em;
+    margin-bottom: 1em;
 
 }
 
