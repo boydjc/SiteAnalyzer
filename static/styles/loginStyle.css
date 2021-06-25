@@ -10,7 +10,6 @@
 
 .errorLog {
     color: red;
-    margin-top: 5em;
 }
 
 h1 {
@@ -41,6 +40,11 @@ form {
 
 form label {
     font-size: 1.3em;
+}
+
+form input[type=text], form input[type=password] {
+    padding-bottom: 1em;
+
 }
 
 form input[type=submit] {
