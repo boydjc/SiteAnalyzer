@@ -47,8 +47,8 @@ form input[type=text], form input[type=password] {
 
 }
 
-form input[type=checkbox] {
-    margin-top: -3em;
+#rememberMeP {
+    margin-top: -2.5em;
 }
 
 
