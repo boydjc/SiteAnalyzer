@@ -8,22 +8,28 @@
 	<div id="loginForm">
 	    <form action="" method="post" novalidate>
 		{{form.hidden_tag() }}
-		{{ form.username.label }}
-		{{ form.username(size=32) }}
-		{% for error in form.username.errors %}
-		    <span class="errorLog">[{{error}}]</span>
-		{% endfor %}
+		<p id="usernameP">
+		    {{ form.username.label }}
+		    {{ form.username(size=32) }}
+		    {% for error in form.username.errors %}
+		        <span class="errorLog">[{{error}}]</span>
+		    {% endfor %}
+		</p>
 	        </br>
 	        </br>
-		{{ form.password.label }}
-		{{ form.password(size=32) }}
-		{% for error in form.password.errors %}
-		    <span class="errorLog">[{{error}}]</span>
-		{% endfor %}
+		<p id="passwordP">
+		    {{ form.password.label }}
+		    {{ form.password(size=32) }}
+		    {% for error in form.password.errors %}
+		        <span class="errorLog">[{{error}}]</span>
+		    {% endfor %}
+		</p>
 	        </br>
 	        </br>
-		{{ form.rememberMe() }} {{ form.rememberMe.label }}
-		{{ form.submit() }}
+		<p id="rememberMeP">
+		    {{ form.rememberMe() }} {{ form.rememberMe.label }}
+		    {{ form.submit() }}
+		</p>
 	    </form>
 	</div>
     </body>
