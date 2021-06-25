@@ -48,15 +48,14 @@ form input[type=text], form input[type=password] {
 }
 
 form input[type=checkbox] {
-    margin-top: -1em;
-    color: red;
+    margin-top: -3em;
 }
 
 
 form input[type=submit] {
     margin-top: 1em;
     width: 5em;
-    height: 1.5em;
+    height: 1.7em;
     margin-left: 5.7em;
     font-size: 1.05em;
 }
