@@ -47,6 +47,11 @@ form input[type=text], form input[type=password] {
 
 }
 
+form input[type=checkbox] {
+    margin-top: -1em;
+}
+
+
 form input[type=submit] {
     margin-top: 1em;
     width: 5em;
