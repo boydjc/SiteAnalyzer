@@ -44,11 +44,14 @@ form label {
 
 form input[type=text], form input[type=password] {
     margin-bottom: 1em;
-
 }
 
 #rememberMeP {
-    margin-top: -4em;
+    margin-top: -5em;
+}
+
+#rememberMeP {
+    margin-top: -3em;
 }
 
 
