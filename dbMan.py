@@ -36,7 +36,7 @@ class DBMan:
             self.cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, passHash))
             print('User Created')
 
-        self.conn.commit(
+        self.conn.commit()
 
     def checkUserLogin(self, username, password):
 
