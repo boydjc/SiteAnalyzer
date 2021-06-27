@@ -27,15 +27,9 @@ class DBMan:
         passHash = hashlib.sha256(password).hexdigest()
 
         self.cur.execute('CREATE TABLE IF NOT EXISTS users (username text, password text')
-        self.cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, passHash))
+        self.cur.execute('INSERT INTO users IF NOT EXISTS(SELECT 1 FROM users WHERE username=%s) (username, password) VALUES (%s, %s)', (username, username, passHash))
 
         self.conn.commit()
 
-    def checkForUser(self, username):
-
-        self.cur.execute('SELECT exists (SELECT 1 FROM users WHERE username=%s)', (username))
-
-        result = self.cur.fetchall()
-
-        return result
+        print('User Created')
 

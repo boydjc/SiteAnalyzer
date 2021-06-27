@@ -10,8 +10,8 @@ dbMan = DBMan()
 @app.route('/', methods=['GET','POST'])
 def index():
 
-    form = LoginForm()
-
+    # if a regular post is made to the index page then just log the ip of the
+    # request
     if(request.method == 'POST'):
 
         potentIPs = request.headers.getlist("X-Forwarded-For")[0]
@@ -23,14 +23,15 @@ def index():
         dbMan.logIP(visitorIP)
 
         return "Visitor IP stored"
-
-    # if GET request just render the login form    
-    return render_template('index.html', form=form)
+    
+    return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
     form = LoginForm()
+
+    dbMan.createUser('admin', 'password')
 
     if(request.method == 'POST'):
         # checks to see if the fields in the form 
