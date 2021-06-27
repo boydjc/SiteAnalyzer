@@ -20,8 +20,8 @@ h1 {
 #loginButtonDiv {
     border: 2px solid #000000;
     border-radius: 2em;
-    height: 6em;
-    width: 9em;
+    height: 3em;
+    width: 6em;
     margin-left: 31em;
     animation-name: fadeIn;
     animation-delay: 0.4s;
@@ -33,4 +33,6 @@ h1 {
     font-size: 1.2em;
     width: 3em;
     height: 1.5em;
+    margin-left: 2em;
+    margin-top: 2em;
 }
