@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 @app.route('/', methods=['GET','POST'])
 def index():
 
-    user = {'username': 'Joshua'}i
+    user = {'username': 'Joshua'}
 
     form = LoginForm()
 
