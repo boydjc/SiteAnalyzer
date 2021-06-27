@@ -18,11 +18,10 @@ h1 {
 }
 
 #loginButtonDiv {
-    border: 2px solid #000000;
     border-radius: 2em;
     height: 3em;
     width: 6em;
-    margin-left: 35em;
+    margin-left: 38em;
     animation-name: fadeIn;
     animation-delay: 0.4s;
     animation-duration: 1s;
