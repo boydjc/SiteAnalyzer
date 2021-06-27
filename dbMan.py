@@ -36,5 +36,16 @@ class DBMan:
             self.cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, passHash))
             print('User Created')
 
-        self.conn.commit()
+        self.conn.commit(
+
+    def checkUserLogin(self, username, password):
+
+        passHash = hashlib.sha256(password.encode()).hexdigest()
+
+        self.cur.execute('SELECT * FROM users WHERE username = %s AND password = %s', (username, passHash))
+
+        loginCorrect = self.cur.fetchone()
+
+        if(loginCorrect):
+            return True
 
