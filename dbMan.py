@@ -6,7 +6,7 @@ class DBMan:
 
     def __init__(self):
         self.databaseUrl = os.environ['DATABASE_URL']
-        self.conn = psycopg2.connect(databaseUrl, sslmode='require')
+        self.conn = psycopg2.connect(self.databaseUrl, sslmode='require')
         self.cur = self.conn.cursor()
 
 
