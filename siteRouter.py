@@ -38,7 +38,7 @@ def login():
         # have values, if so then we successfully login
         # if not then we return the form to the user again
         if(form.validate_on_submit()):
-            if(dbMan.checkUserLogin(form.username.data, form.password.data):
+            if(dbMan.checkUserLogin(form.username.data, form.password.data)):
                 flash('Login Requested for user {}, rememberMe={}'.format(
                     form.username.data, form.rememberMe.data))
                 return redirect('/success')
