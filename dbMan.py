@@ -30,7 +30,7 @@ class DBMan:
 
         self.cur.execute('SELECT * FROM users WHERE username = %s', (username,))
 
-        userExists = cur.fetchone()
+        userExists = self.cur.fetchone()
 
         if not(userExists):
             self.cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, passHash))
