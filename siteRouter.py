@@ -25,7 +25,7 @@ def index():
         return "Visitor IP stored"
 
     # if GET request just render the login form    
-    return render_template('index.html', user=user, form=form)
+    return render_template('index.html', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
