@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin-left: 18.2em;
+    margin-top: 2em;
+    animation-name: fadeIn;
+    animation-delay: 0.2s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
+#loginButtonDiv {
+    border: 2px solid #000000;
+    border-radius: 2em;
+    height: 18em;
+    width: 21em;
+    margin-left: 31em;
+    animation-name: fadeIn;
+    animation-delay: 0.4s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}

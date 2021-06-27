@@ -1,36 +1,12 @@
 <html>
     <head>
 	<title>Dev Site Analyzer</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/loginStyle.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/indexStyle.css') }}">
     </head>
     <body>
-	<h1>Please Login</h1>
-	<div id="loginForm">
-	    <form action="" method="post" novalidate>
-		{{form.hidden_tag() }}
-		<p id="usernameP">
-		    {{ form.username.label }}
-		    {{ form.username(size=32) }}
-		    {% for error in form.username.errors %}
-		        <span class="errorLog">[{{error}}]</span>
-		    {% endfor %}
-		</p>
-	        </br>
-	        </br>
-		<p id="passwordP">
-		    {{ form.password.label }}
-		    {{ form.password(size=32) }}
-		    {% for error in form.password.errors %}
-		        <span class="errorLog">[{{error}}]</span>
-		    {% endfor %}
-		</p>
-	        </br>
-	        </br>
-		<p id="rememberMeP">
-		    {{ form.rememberMe() }} {{ form.rememberMe.label }}
-		    {{ form.submit() }}
-		</p>
-	    </form>
+	<h1>Site Analyzer</h1>
+	<div id="loginButtonDiv">
+	   <a href="/login.html"><button>Login</button></a> 
 	</div>
     </body>
 </html>
