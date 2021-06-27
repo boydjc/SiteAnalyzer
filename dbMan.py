@@ -1,6 +1,7 @@
 import os
 import psycopg2
 from datetime import date
+import hashlib
 
 class DBMan:
 
@@ -8,7 +9,6 @@ class DBMan:
         self.databaseUrl = os.environ['DATABASE_URL']
         self.conn = psycopg2.connect(self.databaseUrl, sslmode='require')
         self.cur = self.conn.cursor()
-
 
     def logIP(self, visitorIP):
         self.cur.execute('CREATE TABLE IF NOT EXISTS connections (date text, ip text)')
@@ -22,5 +22,20 @@ class DBMan:
 
         return str(connData)
 
+    def createUser(self, username, password):
+        # hash the password
+        passHash = hashlib.sha256(password).hexdigest()
 
+        self.cur.execute('CREATE TABLE IF NOT EXISTS users (username text, password text')
+        self.cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, passHash))
+
+        self.conn.commit()
+
+    def checkForUser(self, username):
+
+        self.cur.execute('SELECT exists (SELECT 1 FROM users WHERE username=%s)', (username))
+
+        result = self.cur.fetchall()
+
+        return result
 
