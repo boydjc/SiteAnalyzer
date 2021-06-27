@@ -26,7 +26,7 @@ class DBMan:
         # hash the password
         passHash = hashlib.sha256(password.encode()).hexdigest()
 
-        self.cur.execute('CREATE TABLE IF NOT EXISTS users (username text, password text')
+        self.cur.execute('CREATE TABLE IF NOT EXISTS users (username text, password text)')
 
         userExists = self.cur.execute('EXISTS(SELECT 1 FROM users WHERE username = %s', (username))
 
