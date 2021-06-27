@@ -42,7 +42,7 @@ def login():
             return redirect('/success')
 
     # if GET request just render the login form
-    return render_template('index.html', form=form)
+    return render_template('login.html', form=form)
 
 
 @app.route('/success', methods=['Get'])
