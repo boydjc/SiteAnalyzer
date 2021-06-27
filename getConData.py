@@ -17,7 +17,7 @@ def index():
 
     form = LoginForm()
 
-    dbMan = DBMAN()
+    dbMan = DBMan()
 
     #conn = psycopg2.connect(databaseUrl, sslmode='require')
 
