@@ -28,7 +28,7 @@ class DBMan:
 
         self.cur.execute('CREATE TABLE IF NOT EXISTS users (username text, password text)')
 
-        userExists = self.cur.execute('EXISTS(SELECT 1 FROM users WHERE username = %s', (username,)
+        userExists = self.cur.execute('EXISTS(SELECT 1 FROM users WHERE username = %s', (username,))
 
         if not(userExists):
             self.cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, passHash))
