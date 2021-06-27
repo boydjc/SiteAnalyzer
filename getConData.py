@@ -4,7 +4,7 @@ from datetime import date
 import pandas as pd
 import os
 import psycopg2
-from dbMan import DBMAN
+from dbMan import DBMan
 
 app = Flask(__name__)
 databaseUrl = os.environ['DATABASE_URL']
