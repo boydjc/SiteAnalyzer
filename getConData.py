@@ -4,6 +4,7 @@ from datetime import date
 import pandas as pd
 import os
 import psycopg2
+from dbMan import DBMAN
 
 app = Flask(__name__)
 databaseUrl = os.environ['DATABASE_URL']
@@ -12,9 +13,11 @@ app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 @app.route('/', methods=['GET','POST'])
 def index():
 
-    user = {'username': 'Joshua'}
+    user = {'username': 'Joshua'}i
 
     form = LoginForm()
+
+    dbMan = DBMAN()
 
     #conn = psycopg2.connect(databaseUrl, sslmode='require')
 
