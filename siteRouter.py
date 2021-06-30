@@ -3,7 +3,7 @@ from loginForm import LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
-from dbMan import DBMan
+from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
 #app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
@@ -26,7 +26,7 @@ def index():
 
         visitorIP = potentIPList[len(potentIPList)-1]
 
-        #dbMan.logIP(visitorIP)
+        #TODO store visitor ip here
 
         return "Visitor IP stored"
     
@@ -35,15 +35,14 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
-    form = LoginForm()
-
-    #dbMan.createUser('admin', 'password')
+    form = LoginForm() 
 
     if(request.method == 'POST'):
         # checks to see if the fields in the form 
         # have values, if so then we successfully login
         # if not then we return the form to the user again
         if(form.validate_on_submit()):
+            # TODO: validate user login
             flash('Login Requested for user {}, rememberMe={}'.format(
                 form.username.data, form.rememberMe.data))
             return redirect('/success')
