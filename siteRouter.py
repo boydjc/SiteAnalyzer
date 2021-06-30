@@ -25,7 +25,7 @@ def index():
 
         visitorIP = potentIPList[len(potentIPList)-1]
 
-        dbMan.logIP(visitorIP)
+        #dbMan.logIP(visitorIP)
 
         return "Visitor IP stored"
     
@@ -36,17 +36,16 @@ def login():
 
     form = LoginForm()
 
-    dbMan.createUser('admin', 'password')
+    #dbMan.createUser('admin', 'password')
 
     if(request.method == 'POST'):
         # checks to see if the fields in the form 
         # have values, if so then we successfully login
         # if not then we return the form to the user again
         if(form.validate_on_submit()):
-            if(dbMan.checkUserLogin(form.username.data, form.password.data)):
-                flash('Login Requested for user {}, rememberMe={}'.format(
-                    form.username.data, form.rememberMe.data))
-                return redirect('/success')
+            flash('Login Requested for user {}, rememberMe={}'.format(
+                form.username.data, form.rememberMe.data))
+            return redirect('/success')
 
     # if GET request just render the login form
     return render_template('login.html', form=form)
