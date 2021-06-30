@@ -65,7 +65,7 @@ def register():
             user.set_password(form.password.data)
             db.session.add(user)
             db.session.commit()
-            flash('Account Created for user {}'.format(form.username.data)
+            flash('Account Created for user {}'.format(form.username.data))
             return redirect('/')
     
     return render_template('register.html', form=form)
