@@ -6,7 +6,15 @@
     <body>
 	<h1>Site Analyzer</h1>
 	<div id="loginButtonDiv">
+	   {% with messages = get_flashed_messages() %}
+	   {% if messages %}
+	       {% for message in messages %}
+	           <span>{{message}}</span>
+	       {% endfor %}
+	   {% endif %}
+	   {% endwith %}
 	   <a href="/login"><button>Login</button></a> 
+	   <a href="/register"><button>Register</button></a>
 	</div>
     </body>
 </html>

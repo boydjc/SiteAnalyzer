@@ -47,7 +47,7 @@ def login():
             # TODO: validate user login
             flash('Login Requested for user {}, rememberMe={}'.format(
                 form.username.data, form.rememberMe.data))
-            return redirect('/success')
+            return redirect('/loginSuccess')
 
     # if GET request just render the login form
     return render_template('login.html', form=form)
@@ -65,10 +65,13 @@ def register():
             user.set_password(form.password.data)
             db.session.add(user)
             db.session.commit()
+            flash('Account Created for user {}').format(form.username.data)
+            return redirect('/')
+    
+    return render_template('register.html', form=form)
 
-
-@app.route('/success', methods=['Get'])
-def success():
+@app.route('/loginSuccess', methods=['Get'])
+def loginSuccess():
 
     return render_template('loginSuccess.html')
 
