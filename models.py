@@ -9,3 +9,7 @@ class User(db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
+class Connection(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    ipAddress = db.Column(db.String(20), index=True, unique=False)
+    date = db.Column(db.Date(), index=True, unique=False)
