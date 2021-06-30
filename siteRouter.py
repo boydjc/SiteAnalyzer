@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
 from dbMan import DBMan
-import models
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
@@ -57,6 +56,10 @@ def login():
 def success():
 
     return render_template('loginSuccess.html')
+
+
+#circular import
+import models
 
 if __name__ == "__main__":
     app.run();
