@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, flash, redirect
-from loginForm import LoginForm
+from forms import LoginForm, RegisterForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
@@ -30,7 +30,7 @@ def index():
         db.session.add(visitorCon)
         db.session.commit()
 
-        return "Visitor IP stored"
+        return ""
     
     return render_template('index.html')
 
@@ -51,6 +51,20 @@ def login():
 
     # if GET request just render the login form
     return render_template('login.html', form=form)
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+
+    form = RegisterForm()
+
+    if(request.method == 'POST'):
+        if(form.validate_on_submit()):
+            #create the user account
+            user = models.User(username = form.username.data,
+                    email = form.email.data)
+            user.set_password(form.password.data)
+            db.session.add(user)
+            db.session.commit()
 
 
 @app.route('/success', methods=['Get'])
