@@ -3,7 +3,7 @@ from loginForm import LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
-from werkzeug.security import generate_password_hash
+from datetime import date
 
 app = Flask(__name__)
 #app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
@@ -26,7 +26,9 @@ def index():
 
         visitorIP = potentIPList[len(potentIPList)-1]
 
-        #TODO store visitor ip here
+        visitorCon = models.Connection(ipAddress=visitorIP, dateVisited=date.today())
+        db.session.add(visitorCon)
+        db.session.commit()
 
         return "Visitor IP stored"
     

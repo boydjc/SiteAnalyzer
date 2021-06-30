@@ -1,6 +1,5 @@
 from siteRouter import db
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import date
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -21,7 +20,3 @@ class Connection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ipAddress = db.Column(db.String(20), index=True, unique=False)
     dateVisited = db.Column(db.Date(), index=True, unique=False)
-
-    def log_connection(self, visitorIP):
-        ipAddress = visitorIP
-        dateVisited = date.today()
