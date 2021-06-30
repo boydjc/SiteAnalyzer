@@ -1,11 +1,17 @@
 from flask import Flask, request, render_template, flash, redirect
 from loginForm import LoginForm
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import os
 from dbMan import DBMan
+import models
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
-dbMan = DBMan()
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 @app.route('/', methods=['GET','POST'])
 def index():
