@@ -29,7 +29,7 @@
 		<p id="passwordP">
 		    {{form.password.label}}
 		    {{form.password(size=32)}}
-		    {{%for error in form.password.errors %}
+		    {%for error in form.password.errors %}
 			<span class="errorLog">[{{error}}]</span>
 		    {% endfor %}
 		</p>
