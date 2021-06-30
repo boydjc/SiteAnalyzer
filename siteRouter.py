@@ -60,7 +60,7 @@ def register():
     if(request.method == 'POST'):
         if(form.validate_on_submit()):
             #create the user account
-            user = models.User(username = form.username.data,
+            user = models.Account(username = form.username.data,
                     email = form.email.data)
             user.set_password(form.password.data)
             db.session.add(user)
