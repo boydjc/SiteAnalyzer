@@ -54,7 +54,7 @@ def login():
             if(user is None or not user.check_password(form.password.data)):
                 flash('Invalid username or password')
                 return redirect('/login')
-            login_user(user, remember=form.rememberMe.data))
+            login_user(user, remember=form.rememberMe.data)
             flash('Login Successful for user {}, rememberMe={}'.format(
                 form.username.data, form.rememberMe.data))
             return redirect('/loginSuccess')
