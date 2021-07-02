@@ -88,7 +88,7 @@ def register():
 @app.route('/loginSuccess', methods=['Get'])
 def loginSuccess():
     form = LogoutForm()
-    return render_template('loginSuccess.html' form=form)
+    return render_template('loginSuccess.html', form=form)
 
 
 #circular import
