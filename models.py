@@ -1,11 +1,6 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-# assists Flask-Login with loading the account
-@login.user_loader
-def load_account(id):
-    return Account.query.get(int(id))
-
 class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -29,3 +24,8 @@ class Connection(db.Model):
 #circular import
 from siteRouter import db
 from siteRouter import login
+
+# assists Flask-Login with loading the account
+@login.user_loader
+def load_account(id):
+    return Account.query.get(int(id))
