@@ -1,5 +1,7 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from siteRouter import db
+from siteRouter import login
 
 class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -20,10 +22,6 @@ class Connection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ipAddress = db.Column(db.String(20), index=True, unique=False)
     dateVisited = db.Column(db.Date(), index=True, unique=False)
-
-#circular import
-from siteRouter import db
-from siteRouter import login
 
 # assists Flask-Login with loading the account
 @login.user_loader
