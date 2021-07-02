@@ -12,5 +12,9 @@
 	    </ul>
 	{% endif %}
 	{% endwith %}
+
+	<form action="/logout" method="GET">
+	    {{ form.submit() }}
+	</form>
     </body>
 </html>

@@ -13,3 +13,6 @@ class RegisterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Create Account')
+
+class LogoutForm(FlaskForm):
+    submit = SubmitField('Logout')

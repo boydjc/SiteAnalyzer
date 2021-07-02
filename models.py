@@ -1,5 +1,12 @@
 from siteRouter import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
+from app import login
+
+# assists Flask-Login with loading the account
+@login.user_loader
+def load_account(id):
+    return Account.query.get(int(id))
 
 class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)

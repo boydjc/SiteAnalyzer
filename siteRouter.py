@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template, flash, redirect
-from forms import LoginForm, RegisterForm
+from forms import LoginForm, RegisterForm, LogoutForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager, current_user, login_user
+from models import Account
 import os
 from datetime import date
 
@@ -12,6 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL'].replace("://"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+login = LoginManager(app)
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -37,6 +40,9 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
+    if(current_user.is_authenticated):
+        return redirect(url_for('/loginSuccess'))
+
     form = LoginForm() 
 
     if(request.method == 'POST'):
@@ -44,13 +50,22 @@ def login():
         # have values, if so then we successfully login
         # if not then we return the form to the user again
         if(form.validate_on_submit()):
-            # TODO: validate user login
-            flash('Login Requested for user {}, rememberMe={}'.format(
+            user = User.query.filter_by(username=form.username.data).first()
+            if(user is None or not user.check_password(form.password.data):
+                flash('Invalid username or password')
+                return redirect('/login'))
+            login_user(user, remember=form.rememberMe.data))
+            flash('Login Successful for user {}, rememberMe={}'.format(
                 form.username.data, form.rememberMe.data))
             return redirect('/loginSuccess')
 
     # if GET request just render the login form
     return render_template('login.html', form=form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect('/index')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -72,8 +87,8 @@ def register():
 
 @app.route('/loginSuccess', methods=['Get'])
 def loginSuccess():
-
-    return render_template('loginSuccess.html')
+    form = LogoutForm()
+    return render_template('loginSuccess.html' form=form)
 
 
 #circular import
