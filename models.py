@@ -1,6 +1,5 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from siteRouter import login
 
 # assists Flask-Login with loading the account
 @login.user_loader
@@ -29,3 +28,4 @@ class Connection(db.Model):
 
 #circular import
 from siteRouter import db
+from siteRouter import login
