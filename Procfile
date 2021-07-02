@@ -1,1 +1,1 @@
-web: gunicorn siteRouter:app
+web: gunicorn siteAnalyzer:app
