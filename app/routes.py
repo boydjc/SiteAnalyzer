@@ -1,20 +1,10 @@
 from flask import Flask, request, render_template, flash, redirect
 from forms import LoginForm, RegisterForm, LogoutForm
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_login import LoginManager, current_user, login_user
-from models import Account
+from flask_login import current_user, login_user, logout_user
+from app.models import Account
 import os
 from datetime import date
-
-app = Flask(__name__)
-#app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
-app.config['SECRET_KEY'] = 'debug-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL'].replace("://", "ql://", 1)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-login = LoginManager(app)
+from app import app
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -90,9 +80,3 @@ def loginSuccess():
     form = LogoutForm()
     return render_template('loginSuccess.html', form=form)
 
-
-#circular import
-import models
-
-if __name__ == "__main__":
-    app.run();
