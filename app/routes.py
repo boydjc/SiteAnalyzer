@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, flash, redirect
-from forms import LoginForm, RegisterForm, LogoutForm
+from app.forms import LoginForm, RegisterForm, LogoutForm
 from flask_login import current_user, login_user, logout_user
 from app.models import Account
 import os
