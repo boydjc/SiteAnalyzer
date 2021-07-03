@@ -57,24 +57,6 @@ def logout():
     logout_user()
     return redirect('/')
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-
-    form = RegisterForm()
-
-    if(request.method == 'POST'):
-        if(form.validate_on_submit()):
-            #create the user account
-            user = models.Account(username = form.username.data,
-                    email = form.email.data)
-            user.set_password(form.password.data)
-            db.session.add(user)
-            db.session.commit()
-            flash('Account Created for user {}'.format(form.username.data))
-            return redirect('/')
-    
-    return render_template('register.html', form=form)
-
 @app.route('/loginSuccess', methods=['Get'])
 def loginSuccess():
     form = LogoutForm()
