@@ -8,5 +8,5 @@ class LoginForm(FlaskForm):
     rememberMe = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
-class LoginForm(FlaskForm):
+class LogoutForm(FlaskForm):
     submit = SubmitField('Logout')
