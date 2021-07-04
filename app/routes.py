@@ -31,7 +31,7 @@ def index():
 def login():
 
     if(current_user.is_authenticated):
-        return redirect(url_for('/home'))
+        return redirect('/home')
 
     form = LoginForm() 
 
