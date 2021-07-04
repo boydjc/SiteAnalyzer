@@ -57,8 +57,8 @@ def logout():
     logout_user()
     return redirect('/')
 
-@app.route('/loginSuccess', methods=['Get'])
-def loginSuccess():
+@app.route('/home', methods=['Get'])
+def home():
     form = LogoutForm()
-    return render_template('loginSuccess.html', form=form)
+    return render_template('home.html', form=form)
 
