@@ -5,6 +5,13 @@
     </head>
     <body>
 	<h1>Please Login</h1>
+	{% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	        {% for message in messages %}
+		    <span>{{message}}</span>
+		{% endfor %}
+	    {% endif %}
+	{% endwith %}
 	<div id="loginForm">
 	    <form action="" method="post" novalidate>
 		{{form.hidden_tag() }}
