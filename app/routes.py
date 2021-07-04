@@ -46,6 +46,8 @@ def login():
                 flash('Invalid username or password')
                 return redirect('/login')
             login_user(user, remember=form.rememberMe.data)
+            # redirects to the page the user was trying to get to
+            # if they have to log in before they view it
             next_page = request.args.get('next')
             if not next_page or url_parse(next_page).netloc != '':
                 next_page = '/home'
