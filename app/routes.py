@@ -22,7 +22,7 @@ def index():
         visitorIP = potentIPList[len(potentIPList)-1]
 
         # get the other information for the ip
-        res = requests.get('http://demo.ip-api.com/json/' + visitorIp + 
+        res = requests.get('http://demo.ip-api.com/json/' + visitorIP + 
                 '?fields=66842623&lang=en').json() 
 
         visitorCon = models.Connection(ipAddress=visitorIP, 
