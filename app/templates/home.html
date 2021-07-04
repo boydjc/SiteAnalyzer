@@ -1,24 +1,21 @@
-<html>
-    <head>
-	<title>Dev Site Analyzer</title>
-    </head>
-    <body>
-	{% with messages = get_flashed_messages() %}
-	{% if messages %}
+{% extends "homeBase.html" %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
 	    <ul>
-		{% for message in messages %}
+	        {% for message in messages %}
 		    <li>{{message}}</li>
-		{% endfor %}
-	    </ul>
-	{% endif %}
-	{% endwith %}
+	        {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
-	<div id="header">
-	    <h1>Dev Site Analyzier</h1>
-	</div>
+    <div id="header">
+        <h1>Dev Site Analyzier</h1>
+    </div>
 
-	<form action="/logout" method="GET">
-	    {{ form.submit() }}
-	</form>
-    </body>
-</html>
+    <form action="/logout" method="GET">
+        {{ form.submit() }}
+    </form>
+{% endblock %}
