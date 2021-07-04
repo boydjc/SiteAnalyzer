@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, flash, redirect
+from werkzeug.urls import url_parse
 from app.forms import LoginForm, LogoutForm
 from flask_login import current_user, login_user, logout_user
 from app.models import Account
@@ -45,9 +46,12 @@ def login():
                 flash('Invalid username or password')
                 return redirect('/login')
             login_user(user, remember=form.rememberMe.data)
+            next_page = request.args.get('next')
+            if not next_page or url_parse(next_page).netloc != '':
+                next_page = '/home'
             flash('Login Successful for user {}, rememberMe={}'.format(
                 form.username.data, form.rememberMe.data))
-            return redirect('/home')
+            return redirect(next_page)
 
     # if GET request just render the login form
     return render_template('login.html', form=form)
@@ -58,6 +62,7 @@ def logout():
     return redirect('/')
 
 @app.route('/home', methods=['Get'])
+@login_required
 def home():
     form = LogoutForm()
     return render_template('home.html', form=form)
