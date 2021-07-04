@@ -6,6 +6,7 @@ from app.models import Account
 import os
 from datetime import date
 from app import app
+import requests
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -20,7 +21,20 @@ def index():
 
         visitorIP = potentIPList[len(potentIPList)-1]
 
-        visitorCon = models.Connection(ipAddress=visitorIP, dateVisited=date.today())
+        # get the other information for the ip
+        res = requests.get('http://demo.ip-api.com/json/' + visitorIp + 
+                '?fields=66842623&lang=en').json() 
+
+        visitorCon = models.Connection(ipAddress=visitorIP, 
+                dateVisited=date.today(),
+                country=res['country'],
+                city=res['city'],
+                lat=res['lat'],
+                lon=res['lon'],
+                isp=res['isp'],
+                mobile=res['mobile'],
+                proxy=res['proxy'])
+
         db.session.add(visitorCon)
         db.session.commit()
 

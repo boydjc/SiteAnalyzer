@@ -25,7 +25,7 @@ class Account(UserMixin, db.Model):
 
 class Connection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    dateVisisted = db.Column(db.Date(), index=True, unique=False)
+    dateVisited = db.Column(db.Date(), index=True, unique=False)
     ipAddress = db.Column(db.String(20), index=True, unique=False)
     country = db.Column(db.String(50), index=True, unique=False)
     city = db.Column(db.String(75), index=True, unique=False)
