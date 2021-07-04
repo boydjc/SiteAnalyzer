@@ -5,7 +5,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import Account, Connection
 import os
 from datetime import date
-from app import app
+from app import app, db
 import requests
 
 @app.route('/', methods=['GET','POST'])
