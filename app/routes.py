@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, flash, redirect
 from werkzeug.urls import url_parse
 from app.forms import LoginForm, LogoutForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import Account
+from app.models import Account, Connection
 import os
 from datetime import date
 from app import app
@@ -25,7 +25,7 @@ def index():
         res = requests.get('http://demo.ip-api.com/json/' + visitorIP + 
                 '?fields=66842623&lang=en').json() 
 
-        visitorCon = models.Connection(ipAddress=visitorIP, 
+        visitorCon = Connection(ipAddress=visitorIP, 
                 dateVisited=date.today(),
                 country=res['country'],
                 city=res['city'],
