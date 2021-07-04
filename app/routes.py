@@ -47,7 +47,7 @@ def login():
             login_user(user, remember=form.rememberMe.data)
             flash('Login Successful for user {}, rememberMe={}'.format(
                 form.username.data, form.rememberMe.data))
-            return redirect('/loginSuccess')
+            return redirect('/home')
 
     # if GET request just render the login form
     return render_template('login.html', form=form)
