@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, flash, redirect
 from werkzeug.urls import url_parse
-from app.forms import LoginForm, LogoutForm
+from app.forms import LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import Account, Connection
 import os
@@ -80,6 +80,5 @@ def logout():
 @app.route('/home', methods=['Get'])
 @login_required
 def home():
-    form = LogoutForm()
-    return render_template('home.html', form=form)
+    return render_template('home.html')
 
