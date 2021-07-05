@@ -1,3 +1,7 @@
 body {
     background-color: #B0FFF3;
 }
+
+#navBar li {
+    display: inline-block;
+}
