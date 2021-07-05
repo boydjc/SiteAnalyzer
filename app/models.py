@@ -31,7 +31,7 @@ class Connection(db.Model):
     city = db.Column(db.String(100), index=True, unique=False)
     lat = db.Column(db.Numeric(), index=True, unique=False)
     lon = db.Column(db.Numeric(), index=True, unique=False)
-   # isp = db.Column(db.String(100), index=True, unique=False)
+    isp = db.Column(db.String(200), index=True, unique=False)
     mobile = db.Column(db.Boolean(), index=True, unique=False)
     proxy = db.Column(db.Boolean(), index=True, unique=False)
 
