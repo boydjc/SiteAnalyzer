@@ -2,8 +2,8 @@ body {
     background-color: #B0FFF3;
 }
 
-#navBar {
-    display: inline;
+#navBar ul {
+    display: inline-block;
 }
 
 #navBar li {
