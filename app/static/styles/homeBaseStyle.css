@@ -16,7 +16,7 @@ body {
     margin-left: 2em;
     margin-top: 0.1em;
     padding-top: 0.5em;
-    font-size: 1.8em;
+    font-size: 2em;
     animation-name: fadeIn;
     animation-duration: 1.2s;
     animation-delay: 0.2s;
@@ -26,7 +26,7 @@ body {
 #navBar a {
     border: 2px solid black;
     border-radius: 2em;
-    margin-top: -2.5em;
+    margin-top: -3em;
     margin-right: 1em;
     float: right;
     padding-top: 0.3em;
