@@ -23,7 +23,7 @@ body {
 }
 
 #navBar a {
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2em;
     margin-top: -2.5em;
     margin-right: 1em;
