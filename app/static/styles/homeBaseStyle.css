@@ -5,3 +5,8 @@ body {
 #navBar li {
     display: inline-block;
 }
+
+#navBar {
+    width: 40em;
+    border-bottom: 2px solid black;
+}
