@@ -2,14 +2,13 @@ body {
     background-color: #B0FFF3;
 }
 
-#navBar {
-    display: inline-block;
+#navBar h3 {
+    float: left;
 }
 
 #navBar ul {
     border: 2px solid black;
-    margin-left: 30em;
-    display: inline-block;
+    float: right;
 }
 
 #navBar li {
