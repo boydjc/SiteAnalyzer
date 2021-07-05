@@ -8,6 +8,7 @@ body {
 
 #navBar a {
     border: 2px solid black;
+    margin-top: -5em;
     float: right;
 }
 
