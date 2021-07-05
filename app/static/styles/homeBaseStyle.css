@@ -15,8 +15,10 @@ body {
 #navBar h2 {
     margin-left: 1em;
     margin-top: 0.1em;
+    padding-top: 0.2em;
     animation-name: fadeIn;
     animation-duration: 1s;
+    animation-delay: 0.2s;
     animation-fill-mode: backwards;
 }
 
