@@ -26,12 +26,12 @@ class Account(UserMixin, db.Model):
 class Connection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     dateVisited = db.Column(db.Date(), index=True, unique=False)
-    ipAddress = db.Column(db.String(20), index=True, unique=False)
-    country = db.Column(db.String(100), index=True, unique=False)
-    city = db.Column(db.String(100), index=True, unique=False)
+    ipAddress = db.Column(db.String(), index=True, unique=False)
+    country = db.Column(db.String(), index=True, unique=False)
+    city = db.Column(db.String(), index=True, unique=False)
     lat = db.Column(db.Float(), index=True, unique=False)
     lon = db.Column(db.Float(), index=True, unique=False)
-    isp = db.Column(db.String(100), index=True, unique=False)
+    isp = db.Column(db.String(), index=True, unique=False)
     mobile = db.Column(db.Boolean(), index=True, unique=False)
     proxy = db.Column(db.Boolean(), index=True, unique=False)
 
