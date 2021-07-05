@@ -4,11 +4,13 @@ body {
 
 #navBar h3 {
     float: left;
+    margin-left: 1em;
 }
 
 #navBar a {
     border: 2px solid black;
-    margin-top: -5em;
+    margin-top: -3em;
+    margin-right: 1em;
     float: right;
 }
 
