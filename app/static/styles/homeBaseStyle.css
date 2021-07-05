@@ -5,6 +5,7 @@ body {
 #navBar ul {
     border: 2px solid black;
     margin-left: 30em;
+    display: inline-block;
 }
 
 #navBar li {
