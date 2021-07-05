@@ -2,6 +2,10 @@ body {
     background-color: #B0FFF3;
 }
 
+#navBar {
+    display: inline-block;
+}
+
 #navBar ul {
     border: 2px solid black;
     margin-left: 30em;
