@@ -6,13 +6,9 @@ body {
     float: left;
 }
 
-#navBar ul {
+#navBar a {
     border: 2px solid black;
     float: right;
-}
-
-#navBar li {
-    display: inline-block;
 }
 
 #navBar {
