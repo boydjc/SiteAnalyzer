@@ -2,7 +2,7 @@ body {
     background-color: #B0FFF3;
 }
 
-#navBar h3 {
+#navBar h2 {
     float: left;
     margin-left: 1em;
 }
@@ -10,7 +10,7 @@ body {
 #navBar a {
     border: 2px solid black;
     border-radius: 2em;
-    margin-top: -3em;
+    margin-top: -2.5em;
     margin-right: 1em;
     float: right;
     padding-top: 0.3em;
