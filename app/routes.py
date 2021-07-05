@@ -77,8 +77,14 @@ def logout():
     logout_user()
     return redirect('/')
 
-@app.route('/home', methods=['Get'])
+@app.route('/home', methods=['GET'])
 @login_required
 def home():
     return render_template('home.html')
 
+@app.route('/data', methods=['GET'])
+@login_required
+def data():
+    # this url will be used to get data from the database
+    # through a GET request
+    pass
