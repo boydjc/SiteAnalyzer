@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
-  // test  
+    $(document).on("click", "#refreshButton", function(){
+        alert("Button Clicked");
+    });
 
 });
