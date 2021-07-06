@@ -27,7 +27,6 @@ body {
     border: 2px solid black;
     border-radius: 2em;
     margin-top: -3.5em;
-    margin-right: 1em;
     float: right;
     padding-top: 0.3em;
     padding-bottom: 0.1em;
@@ -38,6 +37,14 @@ body {
     font-size: 1.2em;
     box-shadow: 0px 2px #000000;
     transition: box-shadow 150ms, transform 150ms;
+}
+
+#logoutButton {
+    margin-right: 1em;
+}
+
+#refreshButton {
+    margin-right: 4em;
 }
 
 #navBar a:active {
