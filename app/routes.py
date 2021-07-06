@@ -107,7 +107,7 @@ def data():
             "proxy" : connection.proxy
         }
 
-        allConnsDict["Connection" + connection.id] = connDict
+        allConnsDict["Connection " + str(connection.id)] = connDict
 
     allConnsJSON = json.dumps(allConnsDict) 
 
