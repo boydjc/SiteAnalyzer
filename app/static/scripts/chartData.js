@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", function(){
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
             connectionData = this.responseText;
+	    console.log(connectionData);
 	}
 	xhttp.open("GET", "/data", true);
 	xhttp.send();
-
-	console.log(connectionData);
     });
 });
