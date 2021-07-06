@@ -100,8 +100,8 @@ def data():
             "ipAddress" : connection.ipAddress,
             "country" : connection.country,
             "city" : connection.city,
-            "lat" : connection.lat,
-            "lon" : connection.lon,
+            "lat" : str(connection.lat),
+            "lon" : str(connection.lon),
             "isp" : connection.isp,
             "mobile" : connection.mobile,
             "proxy" : connection.proxy
