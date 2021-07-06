@@ -88,6 +88,6 @@ def data():
     # this url will be used to get data from the database
     # through a GET request
 
-    allConns = Connection.query.all()
+    allConns = tuple(Connection.query.all())
 
     return allConns
