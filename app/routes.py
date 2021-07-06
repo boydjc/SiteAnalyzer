@@ -90,7 +90,7 @@ def data():
 
     allConns = Connection.query.all()
 
-    for connecton in allConns:
-        print(connection);
+    for connection in allConns:
+        print(connection)
 
     return allConns
