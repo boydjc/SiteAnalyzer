@@ -7,6 +7,7 @@ import os
 from datetime import date
 from app import app, db
 import requests
+import json
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -90,7 +91,24 @@ def data():
 
     allConns = Connection.query.all()
 
-    for connection in allConns:
-        print(connection.id)
+    allConnsDict = {}
 
-    return allConns
+    for connection in allConns:
+        connDict = {
+            "id" : connection.id,
+            "dateVisisted" : connection.dateVisisted,
+            "ipAddress" : connection.ipAddress,
+            "country" : connection.country,
+            "city" : connection.city,
+            "lat" : connection.lat,
+            "lon" : connection.lon,
+            "isp" : connection.isp,
+            "mobile" : connection.mobile,
+            "proxy" : connection.proxy
+        }
+
+        allConnsDict["Connection" + connection.id] = connDict
+
+    allConnsJSON = json.dumps(allConnsDict) 
+
+    return allConnsJSON
