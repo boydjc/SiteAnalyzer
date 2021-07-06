@@ -91,6 +91,6 @@ def data():
     allConns = Connection.query.all()
 
     for connection in allConns:
-        print(connection)
+        print(type(connection))
 
     return allConns
