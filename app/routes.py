@@ -88,6 +88,9 @@ def data():
     # this url will be used to get data from the database
     # through a GET request
 
-    allConns = str(Connection.query.all())
+    allConns = Connection.query.all()
+
+    for connecton in allConns:
+        print(connection);
 
     return allConns
