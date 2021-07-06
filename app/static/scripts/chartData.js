@@ -6,5 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	xhttp.open("GET", "/data", true);
 	xhttp.send();
+
+	console.log(connectionData);
     });
 });
