@@ -96,7 +96,7 @@ def data():
     for connection in allConns:
         connDict = {
             "id" : connection.id,
-            "dateVisisted" : connection.dateVisisted,
+            "dateVisited" : connection.dateVisited,
             "ipAddress" : connection.ipAddress,
             "country" : connection.country,
             "city" : connection.city,
