@@ -16,9 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawChart(connDataInput) {
 
-	for(connData in connDataInput) {
-	    console.log(connData);
-	}
+	console.log(connDataInput);
 
 	const labels = [
 	    'January',
