@@ -3,7 +3,8 @@
     <head>
 	<title>{{ title }}</title>
 	<link rel="stylesheet" href="{{url_for('static',filename='styles/homeStyle.css') }}">
-	<script src="{{url_for('static',filename='scripts/chartData.js')}}"></script>
+	<script src="{{url_for('static',filename='scripts/chartControl.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min/js"></script>
     </head>
     <body>
 	<div id="navBar">
@@ -12,6 +13,7 @@
 	    <a href="/logout" id="logoutButton">Logout</a>
 	</div>
 	<div id="hitChartDiv">
+	    <canvas id="myChart"></canvas>
 	</div>
 	
 	<div id="visitorPerXChartDiv">
