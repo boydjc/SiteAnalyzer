@@ -8,7 +8,12 @@ document.addEventListener("DOMContentLoaded", function(){
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
             var connectionData = this.responseText;
-	    drawChart(connectionData);
+	    if(Chart.getChart('myChart')){
+                Chart.getChart('myChart').destroy();
+		drawChart(connectionData);
+	    }else{
+	        drawChart(connectionData);
+	    }
 	}
 	xhttp.open("GET", "/data", true);
 	xhttp.send();
