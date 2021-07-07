@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     function drawChart() {
-
 	const labels = [
 	    'January',
 	    'February',
@@ -40,5 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var myChart = new Chart(document.getElementById('myChart'), config);
     }
+
+    drawChart();
 
 });
