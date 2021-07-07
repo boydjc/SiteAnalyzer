@@ -2,7 +2,7 @@
 <html>
     <head>
 	<title>{{ title }}</title>
-	<link rel="stylesheet" href="{{url_for('static',filename='styles/homeBaseStyle.css') }}">
+	<link rel="stylesheet" href="{{url_for('static',filename='styles/homeStyle.css') }}">
 	<script src="{{url_for('static',filename='scripts/chartData.js')}}"></script>
     </head>
     <body>
@@ -11,14 +11,7 @@
 	    <a href="#" id="refreshButton">Refresh Data</a>
 	    <a href="/logout" id="logoutButton">Logout</a>
 	</div>
-	{% with messages = get_flashed_messages() %}
-	    {% if messages %}
-		<ul>
-		    {% for messages in messages %}
-			<li>{{ message }}</li>
-		    {% endfor %}
-		</ul>
-	    {% endif %}
-	{% endwith %}
+	<div id="chartDiv">
+	</div>
     </body>
 </html>

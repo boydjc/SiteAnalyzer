@@ -52,8 +52,13 @@ body {
     transform: translate(0em, 0.1em);
 }
 
-
 #navBar {
     width: 84em;
     border-bottom: 2px solid black;
+}
+
+#chartDiv {
+    width: 30em;
+    height: 50em;
+    border: 2px solid black;
 }
