@@ -69,8 +69,8 @@ body {
 #visitorPerXChartDiv {
     float: right;
     margin-top: 1em;
-    margin-left: 1em;
-    width: 10em;
+    margin-right: 1em;
+    width: 15em;
     height: 25em;
     border: 2px solid black;
 }
