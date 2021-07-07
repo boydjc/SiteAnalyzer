@@ -57,10 +57,17 @@ body {
     border-bottom: 2px solid black;
 }
 
-#chartDiv {
+#hitChartDiv {
     margin-top: 1em;
     margin-left: 1em;
     width: 50em;
+    height: 25em;
+    border: 2px solid black;
+}
+
+#visitorPerXChartDiv {
+    float: right;
+    width: 10em;
     height: 25em;
     border: 2px solid black;
 }
