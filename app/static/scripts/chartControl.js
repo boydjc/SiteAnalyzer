@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
             var connectionData = this.responseText;
+	    drawChart(connectionData);
 	}
 	xhttp.open("GET", "/data", true);
 	xhttp.send();
@@ -52,13 +53,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // get the data once when the page loads
     // and then again if the refresh data button is clicked
-    connectionData = getDataUpdate();
+    getDataUpdate();
 
     // Get updated connection data from server
     this.getElementById("refreshButton").addEventListener("click", function(){
 	getDataUpdate();
     });
-
-    drawChart(connectionData);
 
 });
