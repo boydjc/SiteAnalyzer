@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", function(){
     // takes a JSON object of connection data and counts the 
     // dates of occurance
     // TODO: make 2nd parameter to count either months, days or years
-    function getDateCount(connDataInput) {
+    function getDateCount(connCountDataInput) {
 
 	connCountData = {};
 
-	var connDataKeys = Object.keys(connDataInput);
+	var connDataKeys = Object.keys(connCountDataInput);
 
         for(key in connDataKeys){
-	    if(connDataInput[connDataKeys[key]].dateVisited in connCountData){
+	    if(connCountDataInput[connDataKeys[key]].dateVisited in connCountData){
 	        connCountData[connDataKeys[key]] += 1;
 	    }else{
                 connCountData[connDataKeys[key]] = 1;
@@ -44,11 +44,13 @@ document.addEventListener("DOMContentLoaded", function(){
     // TODO: make 2nd parameter to draw different time series
     function drawChart(connDataInput) {
 
-	var connDataKeys = Object.keys(connDataInput);
+	/*var connDataKeys = Object.keys(connDataInput);
 	
 	for(key in connDataKeys){
             console.log(connDataInput[connDataKeys[key]].dateVisited);
-	}
+	}*/
+
+	getDateCount(connDataInput);
 
 	const labels = [
 	    'January',
