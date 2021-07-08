@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawChart(connDataInput) {
 
-	console.log(connDataInput["Connection 1"]);
+	var connDataKeys = Object.keys(connDataInput);
+	console.log(connDataKeys);
 
 	const labels = [
 	    'January',
