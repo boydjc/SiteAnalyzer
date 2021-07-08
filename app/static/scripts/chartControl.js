@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
      *     Function Declaration      *
      ********************************/
 
+    // gets connection data from the database
     function getDataUpdate() {
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
@@ -19,7 +20,28 @@ document.addEventListener("DOMContentLoaded", function(){
 	xhttp.send();
     }
 
+    // takes a JSON object of connection data and counts the 
+    // dates of occurance
+    // TODO: make 2nd parameter to count either months, days or years
+    function getDateCount(connDataInput) {
 
+	connCountData = {};
+
+	var connDataKeys = Object.keys(connDataInput);
+
+        for(key in connDataKeys){
+	    if!(connDataInput[connDataKeys[key]].dateVisited in connCountData){
+	        connCountData[connDataKeys[key]] = 1;
+	    }else{
+                connCountData[connDataKeys[key]] += 1;
+	    }
+	}
+
+	console.log(connCountData);
+    }
+
+    // draws chart for connections, 
+    // TODO: make 2nd parameter to draw different time series
     function drawChart(connDataInput) {
 
 	var connDataKeys = Object.keys(connDataInput);
@@ -35,7 +57,18 @@ document.addEventListener("DOMContentLoaded", function(){
 	    'April',
 	    'May',
 	    'June',
+	    'July',
+	    'August',
+	    'September',
+	    'October',
+	    'November',
+	    'December',
 	];
+
+	var janCount, febCount, marCount, aprCount, mayCount, junCount, 
+	    julCount, augCount, sepCount, octCount, novCount, decCount;
+
+
 
 	const data = {
             labels: labels,
@@ -43,7 +76,10 @@ document.addEventListener("DOMContentLoaded", function(){
 	        label: 'Connections',
 		backgroundColor: 'rgb(0,0,0)',
 		borderColor: 'rgb(0,0,0)',
-		data: [0, 10, 5, 2, 20, 30, 45],
+		data: [janCount, febCount, marCount, 
+		       aprCount, mayCount, junCount,
+		       julCount, augCount, sepCount,
+		       octCount, novCount, decCount],
 	    }]
 	};
 
