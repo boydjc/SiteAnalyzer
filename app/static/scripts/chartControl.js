@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	console.log(connDataInput);
 
-	console.log(connDataInput["Connection 1"]);
+	for(key in Object.keys(connDataInput)){
+            console.log(key);
+	}
 
 	const labels = [
 	    'January',
