@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var connDataKeys = Object.keys(connDataInput);
 	
 	for(key in connDataKeys){
-            console.log(connDataInput[key].id);
+            console.log(key);
 	}
 
 	const labels = [
