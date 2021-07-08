@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 Chart.getChart('myChart').destroy();
 		drawConnChart(connectionData, "month");
 	    }else{
-	        drawChart(connectionData);
+	        drawConnChart(connectionData);
 	    }
 	}
 	xhttp.open("GET", "/data", true);
