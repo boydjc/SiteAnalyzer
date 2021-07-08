@@ -37,20 +37,71 @@ document.addEventListener("DOMContentLoaded", function(){
 	    }
 	}
 
-	console.log(connCountData);
+	return connCountData;
     }
 
     // draws chart for connections, 
     // TODO: make 2nd parameter to draw different time series
     function drawChart(connDataInput) {
 
-	/*var connDataKeys = Object.keys(connDataInput);
-	
-	for(key in connDataKeys){
-            console.log(connDataInput[connDataKeys[key]].dateVisited);
-	}*/
+	var connDataKeys = Object.keys(connDataInput);
 
-	getDateCount(connDataInput);
+	var janCount = 0; var febCount = 0; var marCount = 0;
+	var aprCount = 0; var mayCount = 0; var junCount = 0;
+	var julCount = 0; var augCount = 0; var sepCount = 0;
+	var octCount = 0; var novCount = 0; var decCount = 0;
+
+	// counts the occurance of connections per month
+	for(key in connDataKeys){
+	    if(connDataInput[connDataKeys[key]].dateVisited){
+
+	        visitedMonth = connDataInput[connDataKeys[key]].dateVisited[5] + 
+			    connDataInput[connDataKeys[key]].dateVisisted[6];
+
+		switch(visitedMonth){
+		    case "01":
+			janCount += 1;
+			break;
+		    case "02":
+			febCount += 1;
+			break;
+		    case "03":
+			marCount += 1;
+			break;
+		    case "04":
+			aprCount += 1;
+			break;
+		    case "05":
+			mayCount += 1;
+			break;
+		    case "06":
+			junCount += 1;
+			break;
+		    case "07":
+		 	julCount += 1;
+			break;
+		    case "08":
+			augCount += 1;
+			break;
+		    case "09":
+			sepCount += 1;
+			break;
+		    case "10":
+			octCount += 1;
+			break;
+		    case "11":
+			novCount += 1;
+			break;
+		    case "12":
+			decCount += 1;
+			break;
+		    default:
+			console.log("Invalid value for visitedMonth count switch statement");
+			console.log("Value: " + visitedMonth);
+			break;
+		}
+	    }
+	}
 
 	const labels = [
 	    'January',
@@ -66,11 +117,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	    'November',
 	    'December',
 	];
-
-	var janCount, febCount, marCount, aprCount, mayCount, junCount, 
-	    julCount, augCount, sepCount, octCount, novCount, decCount;
-
-
 
 	const data = {
             labels: labels,
