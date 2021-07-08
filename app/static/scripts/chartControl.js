@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
     function drawConnChart(connDataInput, timeSeries) {
 
 	var connDataKeys = Object.keys(connDataInput);
+	const data = {};
 
 	if(timeSeries === "month"){
 
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // TODO: clean up the code redundance of this data obj
 	    // for when we have multiple time series
 	    // maybe some sort of object to hold the data values
-	    const data = {
+	    data = {
                 labels: labels,
 	        datasets: [{
 	            label: 'Connections',
