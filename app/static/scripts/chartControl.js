@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function(){
 	var connDataKeys = Object.keys(connDataInput);
 
         for(key in connDataKeys){
-	    if!(connDataInput[connDataKeys[key]].dateVisited in connCountData){
-	        connCountData[connDataKeys[key]] = 1;
+	    if(connDataInput[connDataKeys[key]].dateVisited in connCountData){
+	        connCountData[connDataKeys[key]] += 1;
 	    }else{
-                connCountData[connDataKeys[key]] += 1;
+                connCountData[connDataKeys[key]] = 1;
 	    }
 	}
 
