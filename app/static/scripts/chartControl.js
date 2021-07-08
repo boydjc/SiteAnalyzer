@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    if(connDataInput[connDataKeys[key]].dateVisited){
 
 	        visitedMonth = connDataInput[connDataKeys[key]].dateVisited[5] + 
-			    connDataInput[connDataKeys[key]].dateVisisted[6];
+			    connDataInput[connDataKeys[key]].dateVisited[6];
 
 		switch(visitedMonth){
 		    case "01":
