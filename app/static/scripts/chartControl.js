@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function(){
     function drawConnChart(connDataInput, timeSeries) {
 
 	var connDataKeys = Object.keys(connDataInput);
-	let data = {};
+	var data = {};
+	var config = {};
 
 	if(timeSeries === "month"){
 
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    };
 	}
 
-        const config = {
+        config = {
             type: 'line',
 	    data, 
 	    options: {}
