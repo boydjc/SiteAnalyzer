@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
     function getDataUpdate() {
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
-            var connectionData = this.responseText;
+            var connectionData = JSON.parse(this.responseText);
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
 		drawChart(connectionData);
