@@ -22,11 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawChart(connDataInput) {
 
-	console.log(connDataInput);
-
-	for(key in Object.keys(connDataInput)){
-            console.log(key);
-	}
+	console.log(connDataInput["Connection 1"]);
 
 	const labels = [
 	    'January',
