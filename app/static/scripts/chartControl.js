@@ -96,8 +96,6 @@ document.addEventListener("DOMContentLoaded", function(){
 			decCount += 1;
 			break;
 		    default:
-			console.log("Invalid value for visitedMonth count switch statement");
-			console.log("Value: " + visitedMonth);
 			break;
 		}
 	    }
