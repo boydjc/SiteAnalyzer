@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
         for(key in connDataKeys){
 	    if(connCountDataInput[connDataKeys[key]].dateVisited in connCountData){
-	        connCountData[connDataKeys[key].dateVisited] += 1;
+	        connCountData[connCountDataInput[connDataKeys[key]].dateVisited] += 1;
 	    }else{
-                connCountData[connDataKeys[key].dateVisited] = 1;
+                connCountData[connCountDataInput[connDataKeys[key]].dateVisited] = 1;
 	    }
 	}
 
