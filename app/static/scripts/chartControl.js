@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawChart(connDataInput) {
 
+	for(connData in connDataInput){
+            console.log(connData.id);
+	}
+
 	console.log(connDataInput);
 
 	const labels = [
