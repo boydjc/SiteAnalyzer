@@ -84,6 +84,10 @@ body {
 }
 
 #topVisitorDiv table {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 100%;
+}
+
+#topVisitorDiv tr, td {
+    border: 1px solid black;
 }
