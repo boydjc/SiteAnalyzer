@@ -83,6 +83,8 @@ body {
     border: 2px solid black;
 }
 
-#topVisitorDiv table, #topVisitorDiv table tr {
+#topVisitorDiv table, 
+#topVisitorDiv table tr, 
+#topVisitorDiv table td, {
     border: 1px solid black;
 }
