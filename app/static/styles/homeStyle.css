@@ -93,5 +93,6 @@ body {
 }
 
 #topVisitorDiv td {
+    display: inline-block;
     text-align: center;
 }
