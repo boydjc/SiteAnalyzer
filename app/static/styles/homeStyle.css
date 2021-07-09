@@ -92,9 +92,12 @@ body {
     border: 1px solid black;
 }
 
+#topVisitorDiv tr {
+    margin-bottom: 1em;
+}
+
 #topVisitorDiv td {
     text-align: center;
-    margin-bottom: 1em;
 }
 
 #topVisitorDiv td div {
