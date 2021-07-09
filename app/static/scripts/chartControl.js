@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+
+    var connectionData;
+
     /*********************************
      *     Function Declaration      *
      ********************************/
@@ -8,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
     function getDataUpdate() {
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
-            var connectionData = JSON.parse(this.responseText);
+            connectionData = JSON.parse(this.responseText);
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
 		drawConnChart(connectionData, "daily");
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     // draws chart for connections, 
-    // TODO: make 2nd parameter to draw different time series
+    
     function drawConnChart(connDataInput, timeSeries) {
 
 	var connDataKeys = Object.keys(connDataInput);
@@ -212,4 +215,14 @@ document.addEventListener("DOMContentLoaded", function(){
 	getDataUpdate();
     });
 
+    this.getElementById("chartTimeSeries").addEventListener("change", function(){
+
+	Chart.getChart('myChart').destroy();
+
+	if(this.value === "Monthly"){
+	    drawConnChart(connectionData, "monthly");
+	}else if(this.value ==== "Daily"){
+            drawConnChart(connectionData, "daily");
+	}
+    });
 });
