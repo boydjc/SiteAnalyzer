@@ -219,9 +219,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	Chart.getChart('myChart').destroy();
 
-	if(this.value === "Monthly"){
+	if(this.value === "monthly"){
 	    drawConnChart(connectionData, "monthly");
-	}else if(this.value === "Daily"){
+	}else if(this.value === "daily"){
             drawConnChart(connectionData, "daily");
 	}else{
             console.log(this.value);
