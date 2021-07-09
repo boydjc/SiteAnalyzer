@@ -97,14 +97,14 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // for when we have multiple time series
 	    // maybe some sort of object to hold the data values
 	    dataset = [{
-	            label: 'Connections',
-		    backgroundColor: 'rgb(0,0,0)',
-		    borderColor: 'rgb(0,0,0)',
-		    data: [janCount, febCount, marCount, 
-		           aprCount, mayCount, junCount,
-		           julCount, augCount, sepCount,
-		           octCount, novCount, decCount],
-	            }]
+	        label: 'Connections',
+		backgroundColor: 'rgb(0,0,0)',
+		borderColor: 'rgb(0,0,0)',
+		data: [janCount, febCount, marCount, 
+		       aprCount, mayCount, junCount,
+		       julCount, augCount, sepCount,
+		       octCount, novCount, decCount],
+	    }]
 	}
 
 	data = {
