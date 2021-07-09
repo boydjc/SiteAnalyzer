@@ -223,6 +223,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	    drawConnChart(connectionData, "monthly");
 	}else if(this.value === "Daily"){
             drawConnChart(connectionData, "daily");
+	}else{
+            console.log(this.value);
 	}
     });
 });
