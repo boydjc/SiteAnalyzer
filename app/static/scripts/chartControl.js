@@ -109,6 +109,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	}else if(timeSeries === "daily"){
 
+	    // get today's date so we can count for the right month
+	    var today = new Date();
+	    var todayMonth = String(today.getMonth() + 1).padStart(2, '0');
+
 	    // 31 slots in this array corresponding to 
 	    // 31 max days in a month
 	
@@ -121,42 +125,48 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // counts the occurance of connections per month
 	    for(key in connDataKeys){
 	        if(connDataInput[connDataKeys[key]].dateVisited){
+			
+		    visitedMonth = connDataInput[connDataKeys[key]].dateVisited[5] +
+				  connDataInput[connDataKeys[key]].dateVisited[6];
 
-	            visitedDay = connDataInput[connDataKeys[key]].dateVisited[8] + 
-			        connDataInput[connDataKeys[key]].dateVisited[9];
+		    if(visitedMonth === todayMonth){
 
-		    switch(visitedDay){
-		        case "01": dayCount[0] += 1; break;
-		        case "02": dayCount[1] += 1; break;
-		        case "03": dayCount[2] += 1; break;
-		        case "04": dayCount[3] += 1; break;
-		        case "05": dayCount[4] += 1; break;
-		        case "06": dayCount[5] += 1; break;
-		        case "07": dayCount[6] += 1; break;
-		        case "08": dayCount[7] += 1; break;
-		        case "09": dayCount[8] += 1; break;
-		        case "10": dayCount[9] += 1; break;
-		        case "11": dayCount[10] += 1; break;
-		        case "12": dayCount[11] += 1; break;
-		        case "13": dayCount[12] += 1; break;
-			case "14": dayCount[13] += 1; break;
-			case "15": dayCount[14] += 1; break;
-			case "16": dayCount[15] += 1; break;
-			case "17": dayCount[16] += 1; break;
-			case "18": dayCount[17] += 1; break;
-			case "19": dayCount[18] += 1; break;
-			case "20": dayCount[19] += 1; break;
-			case "21": dayCount[20] += 1; break;
-			case "22": dayCount[21] += 1; break;
-			case "23": dayCount[22] += 1; break;
-			case "24": dayCount[23] += 1; break;
-			case "25": dayCount[24] += 1; break;
-			case "26": dayCount[25] += 1; break;
-			case "27": dayCount[26] += 1; break;
-			case "28": dayCount[27] += 1; break;
-			case "29": dayCount[28] += 1; break;
-			case "30": dayCount[29] += 1; break;
-			case "31": dayCount[30] += 1; break;
+	                visitedDay = connDataInput[connDataKeys[key]].dateVisited[8] + 
+			            connDataInput[connDataKeys[key]].dateVisited[9];
+
+		        switch(visitedDay){
+		            case "01": dayCount[0] += 1; break;
+		            case "02": dayCount[1] += 1; break;
+		            case "03": dayCount[2] += 1; break;
+		            case "04": dayCount[3] += 1; break;
+		            case "05": dayCount[4] += 1; break;
+		            case "06": dayCount[5] += 1; break;
+		            case "07": dayCount[6] += 1; break;
+		            case "08": dayCount[7] += 1; break;
+		            case "09": dayCount[8] += 1; break;
+		            case "10": dayCount[9] += 1; break;
+		            case "11": dayCount[10] += 1; break;
+		            case "12": dayCount[11] += 1; break;
+		            case "13": dayCount[12] += 1; break;
+			    case "14": dayCount[13] += 1; break;
+			    case "15": dayCount[14] += 1; break;
+			    case "16": dayCount[15] += 1; break;
+			    case "17": dayCount[16] += 1; break;
+			    case "18": dayCount[17] += 1; break;
+			    case "19": dayCount[18] += 1; break;
+			    case "20": dayCount[19] += 1; break;
+			    case "21": dayCount[20] += 1; break;
+			    case "22": dayCount[21] += 1; break;
+			    case "23": dayCount[22] += 1; break;
+			    case "24": dayCount[23] += 1; break;
+			    case "25": dayCount[24] += 1; break;
+			    case "26": dayCount[25] += 1; break;
+			    case "27": dayCount[26] += 1; break;
+			    case "28": dayCount[27] += 1; break;
+			    case "29": dayCount[28] += 1; break;
+			    case "30": dayCount[29] += 1; break;
+			    case "31": dayCount[30] += 1; break;
+		        }
 		    }
 	        }
 	    }
