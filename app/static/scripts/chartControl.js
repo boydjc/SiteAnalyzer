@@ -12,11 +12,12 @@ document.addEventListener("DOMContentLoaded", function(){
         var xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
             connectionData = JSON.parse(this.responseText);
+	    timeSeriesSelect = document.getElementById("chartTimeSeries");
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
-		drawConnChart(connectionData, "monthly");
+		drawConnChart(connectionData, timeSeriesSelect.value);
 	    }else{
-	        drawConnChart(connectionData, "daily");
+	        drawConnChart(connectionData, timeSeriesSelect.value);
 	    }
 	}
 	xhttp.open("GET", "/data", true);
@@ -216,15 +217,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     this.getElementById("chartTimeSeries").addEventListener("change", function(){
-
 	Chart.getChart('myChart').destroy();
-
-	if(this.value === "monthly"){
-	    drawConnChart(connectionData, "monthly");
-	}else if(this.value === "daily"){
-            drawConnChart(connectionData, "daily");
-	}else{
-            console.log(this.value);
-	}
+	drawConnChart(connectionData, this.value);
     });
 });
