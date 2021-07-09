@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
             connectionData = JSON.parse(this.responseText);
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
-		drawConnChart(connectionData, "daily");
+		drawConnChart(connectionData, "monthly");
 	    }else{
 	        drawConnChart(connectionData, "daily");
 	    }
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var config = {};
 	var dataset = [];
 
-	if(timeSeries === "month"){
+	if(timeSeries === "monthly"){
 
 	    var janCount = 0; var febCount = 0; var marCount = 0;
 	    var aprCount = 0; var mayCount = 0; var junCount = 0;
