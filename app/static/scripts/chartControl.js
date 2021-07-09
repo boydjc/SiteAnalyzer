@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function(){
             var connectionData = JSON.parse(this.responseText);
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
-		drawConnChart(connectionData, "month");
+		drawConnChart(connectionData, "daily");
 	    }else{
-	        drawConnChart(connectionData, "month");
+	        drawConnChart(connectionData, "daily");
 	    }
 	}
 	xhttp.open("GET", "/data", true);
@@ -93,9 +93,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	        'September','October','November','December',
 	    ];
 	    
-	    // TODO: clean up the code redundance of this data obj
-	    // for when we have multiple time series
-	    // maybe some sort of object to hold the data values
 	    dataset = [{
 	        label: 'Connections',
 		backgroundColor: 'rgb(0,0,0)',
@@ -105,6 +102,87 @@ document.addEventListener("DOMContentLoaded", function(){
 		       julCount, augCount, sepCount,
 		       octCount, novCount, decCount],
 	    }]
+
+	}else if(timeSeries === "daily"){
+
+	    // 31 slots in this array corresponding to 
+	    // 31 max days in a month
+	
+            var dayCount = [0, 0, 0, 0, 0, 0, 0,
+			    0, 0, 0, 0, 0, 0, 0,
+		            0, 0, 0, 0, 0, 0, 0,
+		            0, 0, 0, 0, 0, 0, 0,
+		            0, 0, 0];
+
+	    // counts the occurance of connections per month
+	    for(key in connDataKeys){
+	        if(connDataInput[connDataKeys[key]].dateVisited){
+
+	            visitedDay = connDataInput[connDataKeys[key]].dateVisited[8] + 
+			        connDataInput[connDataKeys[key]].dateVisited[9];
+
+		    switch(visitedDay){
+		        case "01": dayCount[0] += 1; break;
+		        case "02": dayCount[1] += 1; break;
+		        case "03": dayCount[2] += 1; break;
+		        case "04": dayCount[3] += 1; break;
+		        case "05": dayCount[4] += 1; break;
+		        case "06": dayCount[5] += 1; break;
+		        case "07": dayCount[6] += 1; break;
+		        case "08": dayCount[7] += 1; break;
+		        case "09": dayCount[8] += 1; break;
+		        case "10": dayCount[9] += 1; break;
+		        case "11": dayCount[10] += 1; break;
+		        case "12": dayCount[11] += 1; break;
+		        case "13": dayCount[12] += 1; break;
+			case "14": dayCount[13] += 1; break;
+			case "15": dayCount[14] += 1; break;
+			case "16": dayCount[15] += 1; break;
+			case "17": dayCount[16] += 1; break;
+			case "18": dayCount[17] += 1; break;
+			case "19": dayCount[18] += 1; break;
+			case "20": dayCount[19] += 1; break;
+			case "21": dayCount[20] += 1; break;
+			case "22": dayCount[21] += 1; break;
+			case "23": dayCount[22] += 1; break;
+			case "24": dayCount[23] += 1; break;
+			case "25": dayCount[24] += 1; break;
+			case "26": dayCount[25] += 1; break;
+			case "27": dayCount[26] += 1; break;
+			case "28": dayCount[27] += 1; break;
+			case "29": dayCount[28] += 1; break;
+			case "30": dayCount[29] += 1; break;
+			case "31": dayCount[30] += 1; break;
+		    }
+	        }
+	    }
+	
+	    labels = [
+		'01','02','03','04','05','06','07',
+		'08','09','10','11','12','13','14',
+		'15','16','17','18','19','20','21',
+		'22','23','24','25','26','27','28',
+		'29','30','31',
+	    ];
+	    
+	    
+	    dataset = [{
+	        label: 'Connections',
+		backgroundColor: 'rgb(0,0,0)',
+		borderColor: 'rgb(0,0,0)',
+		data: [dayCount[0], dayCount[1], dayCount[2],
+		       dayCount[3], dayCount[4], dayCount[5],
+		       dayCount[6], dayCount[7], dayCount[8],
+		       dayCount[9], dayCount[10], dayCount[11],
+		       dayCount[12], dayCount[13], dayCount[14],
+		       dayCount[15], dayCount[16], dayCount[17],
+		       dayCount[18], dayCount[19], dayCount[20],
+		       dayCount[21], dayCount[22], dayCount[23],
+		       dayCount[24], dayCount[25], dayCount[26],
+		       dayCount[27], dayCount[28], dayCount[29],
+		       dayCount[30]]
+	    }]
+	
 	}
 
 	data = {
