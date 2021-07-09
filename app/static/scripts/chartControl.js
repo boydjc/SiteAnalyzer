@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	if(this.value === "Monthly"){
 	    drawConnChart(connectionData, "monthly");
-	}else if(this.value ==== "Daily"){
+	}else if(this.value === "Daily"){
             drawConnChart(connectionData, "daily");
 	}
     });
