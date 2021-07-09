@@ -25,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function(){
     function drawConnChart(connDataInput, timeSeries) {
 
 	var connDataKeys = Object.keys(connDataInput);
+	var labels = {};
 	var data = {};
 	var config = {};
+	var dataset = [];
 
 	if(timeSeries === "month"){
 
@@ -85,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	        }
 	    }
 	
-	    const labels = [
+	    labels = [
 	        'January','February','March','April',
 		'May','June','July','August',
 	        'September','October','November','December',
@@ -94,9 +96,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // TODO: clean up the code redundance of this data obj
 	    // for when we have multiple time series
 	    // maybe some sort of object to hold the data values
-	    data = {
-                labels: labels,
-	        datasets: [{
+	    dataset = [{
 	            label: 'Connections',
 		    backgroundColor: 'rgb(0,0,0)',
 		    borderColor: 'rgb(0,0,0)',
@@ -104,9 +104,13 @@ document.addEventListener("DOMContentLoaded", function(){
 		           aprCount, mayCount, junCount,
 		           julCount, augCount, sepCount,
 		           octCount, novCount, decCount],
-	        }]
-	    };
+	            }]
 	}
+
+	data = {
+            labels: labels,
+	    datasets: dataset
+	};
 
         config = {
             type: 'line',
