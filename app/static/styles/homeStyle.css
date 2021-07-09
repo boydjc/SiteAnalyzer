@@ -92,6 +92,10 @@ body {
     border: 1px solid black;
 }
 
+#topVisitorDiv tr {
+    padding-bottom: 1em;
+}
+
 #topVisitorDiv td {
     text-align: center;
 }
