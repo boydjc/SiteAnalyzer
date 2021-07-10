@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			title: {
 			    display: false,
 			}
-		    }
+		    }, 
 
 		    indexAxis: 'y'
 		}
