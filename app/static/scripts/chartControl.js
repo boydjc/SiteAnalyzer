@@ -260,6 +260,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    tableData.appendChild(ipCountNode);
 	    tableData.appendChild(ipCountBarDiv);
+	    tableRow.appendChild(tableData);
+
+	    visitorTable.appendChild(tableRow);
 	}
     }
 
