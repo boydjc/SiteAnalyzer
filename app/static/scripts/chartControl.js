@@ -251,6 +251,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ipCell.innerHTML = uniqueIPs[i];
 	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
+	    var barDiv = document.createElement("DIV");
+	    barDiv.setAttribute('id', 'visitorBar' + i);
+	    barDiv.setAttribute('class', 'visitorBar');
+	    ipCountCell.appendChild(barDiv);
 	}
     }
 
