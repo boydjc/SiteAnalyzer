@@ -236,6 +236,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	// for each unique IP, add a new row to the 
 	// topVisitorDiv table on the page
 	
+	console.log(ipCount);
+
 	var uniqueIPs = Object.keys(ipCount);
 
 	for(ip in uniqueIPs){
