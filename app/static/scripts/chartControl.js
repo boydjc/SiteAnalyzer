@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[i];
-	    ipCountCell = ipCount[uniqueIPs[i]];
+	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
 	}
     }
 
