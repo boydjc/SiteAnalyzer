@@ -241,13 +241,13 @@ document.addEventListener("DOMContentLoaded", function(){
 	for(ip in uniqueIPs){
             visitorTable = document.getElementById("topVisitorTable");
 
-	    var tableRow = visitorTable.insertRow(0);
+	    var tableRow = visitorTable.insertRow(1);
 	    
 	    var ipCell = tableRow.insertCell(0);
-	    var ipCount = tableRow.insertCell(1);
+	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[ip];
-	    ipCount = ipCount[uniqueIPs][ip];
+	    ipCountCell = ipCount[uniqueIPs][ip];
 	}
     }
 
