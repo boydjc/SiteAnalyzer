@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	for(ip in uniqueIPs){
             visitorTable = document.getElementById("topVisitorTable");
 
-	    var tableRow = visitorTable.insertRow(1);
+	    var tableRow = visitorTable.insertRow(ip+1);
 	    
 	    var ipCell = tableRow.insertCell(0);
 	    var ipCountCell = tableRow.insertCell(1);
