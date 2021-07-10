@@ -274,6 +274,14 @@ document.addEventListener("DOMContentLoaded", function(){
 		type: 'bar',
 		data,
 		options: {
+		    plugins: {
+                        legend: {
+			    display: false;
+			}
+			title: {
+			    display: false;
+			}
+		    }
 		    indexAxis: 'y'
 		}
 	    }
