@@ -218,9 +218,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	for(key in connDataKeys){
 	    
-	    visitedIP = connDataInput[connDataKeys[key]].ipAddress;
+	    visitorIP = connDataInput[connDataKeys[key]].ipAddress;
 
-	    console.log(visitedIP);
+	    if(visitorIP) {
+		console.log(visitorIP);
+	    }
 
 	}
     }
