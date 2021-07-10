@@ -237,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	// for each unique IP, add a new row to the 
 	// topVisitorDiv table on the page
 	
-
 	var uniqueIPs = Object.keys(ipCount);
 
 	for(let i=0; i<=uniqueIPs.length-1; i++){
@@ -255,7 +254,30 @@ document.addEventListener("DOMContentLoaded", function(){
 	    barDiv.setAttribute('id', 'visitorBar' + i);
 	    barDiv.setAttribute('class', 'visitorBar');
 	    ipCountCell.appendChild(barDiv);
-	}
+
+	    // draw the bar chart in the div
+	    barDiv = document.getElementById("visitorBar" + i);
+	   
+	    const labels = ['count'];
+
+	    const data = {
+		labels: labels,
+		datasets: [{
+		    label: 'Visits',
+		    backgroundColor: 'rgb(0, 0, 255)',
+		    borderColor: 'rgb(0, 0, 255)',
+		    data: [10],
+		}]
+	    };
+
+	    const config = {
+		type: 'bar',
+		data,
+		options: {}
+	    }
+	    
+	    var barChart = new Chart(barDiv, config);
+	}	
     }
 
     /*********************************
