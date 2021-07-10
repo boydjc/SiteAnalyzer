@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var uniqueIPs = Object.keys(ipCount);
 
 	for(let i=0; i<=uniqueIPs.length-1; i++){
-	    console.log(uniqueIPs[i]);
+
             var visitorTable = document.getElementById("topVisitorTable");
 
 	    var tableRow = visitorTable.insertRow(i+1);
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ipCell.innerHTML = uniqueIPs[i];
 	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
-	    var barDiv = document.createElement("DIV");
+	    var barDiv = document.createElement("CANVAS");
 	    barDiv.setAttribute('id', 'visitorBar' + i);
 	    barDiv.setAttribute('class', 'visitorBar');
 	    ipCountCell.appendChild(barDiv);
