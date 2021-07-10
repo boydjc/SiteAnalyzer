@@ -249,6 +249,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[i];
+	    ipCountCell = ipCount[uniqueIPs[i]];
+			
 	    var barCanvasDiv = document.createElement("DIV");
 	    barCanvasDiv.setAttribute('id', 'visitorBarDiv' + i);
 	    var barCanvas = document.createElement("CANVAS");
@@ -259,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // draw the bar chart in the div
 	    barCanvas = document.getElementById("visitorBar" + i);
 	   
-	    const labels = [ipCount[uniqueIPs[i]]];
+	    const labels = [''];
 
 	    const data = {
 		labels: labels,
