@@ -125,16 +125,16 @@ document.addEventListener("DOMContentLoaded", function(){
 		            0, 0, 0];
 
 	    // counts the occurance of connections per month
-	    for(var i=0; i<=connDataKeys.length; i++){
-	        if(connDataInput[connDataKeys[i]].dateVisited){
+	    for(var a=0; a<=connDataKeys.length; a++){
+	        if(connDataInput[connDataKeys[a]].dateVisited){
 			
-		    visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] +
-				  connDataInput[connDataKeys[i]].dateVisited[6];
+		    visitedMonth = connDataInput[connDataKeys[a]].dateVisited[5] +
+				  connDataInput[connDataKeys[a]].dateVisited[6];
 
 		    if(visitedMonth === todayMonth){
 
-	                visitedDay = connDataInput[connDataKeys[i]].dateVisited[8] + 
-			            connDataInput[connDataKeys[i]].dateVisited[9];
+	                visitedDay = connDataInput[connDataKeys[a]].dateVisited[8] + 
+			            connDataInput[connDataKeys[a]].dateVisited[9];
 
 		        switch(visitedDay){
 		            case "01": dayCount[0] += 1; break;
