@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // draw the bar chart in the div
 	    barCanvas = document.getElementById("visitorBar" + i);
 	   
-	    const labels = ['count'];
+	    const labels = [];
 
 	    const data = {
 		labels: labels,
