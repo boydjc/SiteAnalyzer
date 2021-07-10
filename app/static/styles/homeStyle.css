@@ -99,6 +99,6 @@ body {
 #topVisitorDiv td canvas {
     float: right;
     margin-right: 3em;
-    height: 10;
-    width: 30;
+    height: 2;
+    width: 20;
 }
