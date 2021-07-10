@@ -250,13 +250,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ipCell.innerHTML = uniqueIPs[i];
 	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
-	    var barDiv = document.createElement("CANVAS");
-	    barDiv.setAttribute('id', 'visitorBar' + i);
-	    barDiv.setAttribute('class', 'visitorBar');
+	    var barCanvas = document.createElement("CANVAS");
+	    barCanvas.setAttribute('id', 'visitorBar' + i);
+	    barCanvas.setAttribute('class', 'visitorBar');
 	    ipCountCell.appendChild(barDiv);
 
 	    // draw the bar chart in the div
-	    barDiv = document.getElementById("visitorBar" + i);
+	    barCanvas = document.getElementById("visitorBar" + i);
 	   
 	    const labels = ['count'];
 
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 	    }
 	    
-	    var barChart = new Chart(barDiv, config);
+	    var barChart = new Chart(barCanvas, config);
 	}	
     }
 
