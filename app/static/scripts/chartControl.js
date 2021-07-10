@@ -44,11 +44,11 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var octCount = 0; var novCount = 0; var decCount = 0;
 
 	    // counts the occurance of connections per month
-	    for(key in connDataKeys){
-	        if(connDataInput[connDataKeys[key]].dateVisited){
+	    for(var i=0; i<=connDataKeys; i++){
+	        if(connDataInput[connDataKeys[i]].dateVisited){
 
-	            visitedMonth = connDataInput[connDataKeys[key]].dateVisited[5] + 
-			        connDataInput[connDataKeys[key]].dateVisited[6];
+	            visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] + 
+			        connDataInput[connDataKeys[i]].dateVisited[6];
 
 		    switch(visitedMonth){
 		        case "01":
@@ -125,16 +125,16 @@ document.addEventListener("DOMContentLoaded", function(){
 		            0, 0, 0];
 
 	    // counts the occurance of connections per month
-	    for(key in connDataKeys){
-	        if(connDataInput[connDataKeys[key]].dateVisited){
+	    for(var i=0; i<=connDataKeys; i++){
+	        if(connDataInput[connDataKeys[i]].dateVisited){
 			
-		    visitedMonth = connDataInput[connDataKeys[key]].dateVisited[5] +
-				  connDataInput[connDataKeys[key]].dateVisited[6];
+		    visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] +
+				  connDataInput[connDataKeys[i]].dateVisited[6];
 
 		    if(visitedMonth === todayMonth){
 
-	                visitedDay = connDataInput[connDataKeys[key]].dateVisited[8] + 
-			            connDataInput[connDataKeys[key]].dateVisited[9];
+	                visitedDay = connDataInput[connDataKeys[i]].dateVisited[8] + 
+			            connDataInput[connDataKeys[i]].dateVisited[9];
 
 		        switch(visitedDay){
 		            case "01": dayCount[0] += 1; break;
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var ipCount = {};
 
 	// count the number of times each unique IP has connected
-	for(key in connDataKeys){
+	for(var i=0; i<=connDataKeys.length; i++){
 	    
 	    visitorIP = connDataInput[connDataKeys[key]].ipAddress;
 
@@ -239,19 +239,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var uniqueIPs = Object.keys(ipCount);
 
-	console.log(uniqueIPs);
-
-	for(ip in uniqueIPs){
-	    console.log(uniqueIPs[ip]);
+	for(var i=0; i<=uniqueIPs; i++){
+	    console.log(uniqueIPs[i]);
             var visitorTable = document.getElementById("topVisitorTable");
 
-	    var tableRow = visitorTable.insertRow(ip+1);
+	    var tableRow = visitorTable.insertRow(i+1);
 	    
 	    var ipCell = tableRow.insertCell(0);
 	    var ipCountCell = tableRow.insertCell(1);
 
-	    ipCell.innerHTML = uniqueIPs[ip];
-	    ipCountCell = ipCount[uniqueIPs[ip]];
+	    ipCell.innerHTML = uniqueIPs[i];
+	    ipCountCell = ipCount[uniqueIPs[i]];
 	}
     }
 
