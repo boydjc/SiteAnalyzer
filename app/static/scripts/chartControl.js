@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var octCount = 0; var novCount = 0; var decCount = 0;
 
 	    // counts the occurance of connections per month
-	    for(var i=0; i<=connDataKeys.length; i++){
+	    for(let i=0; i<=connDataKeys.length; i++){
 	        if(connDataInput[connDataKeys[i]].dateVisited){
 
 	            visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] + 
@@ -125,16 +125,16 @@ document.addEventListener("DOMContentLoaded", function(){
 		            0, 0, 0];
 
 	    // counts the occurance of connections per month
-	    for(var a=0; a<=connDataKeys.length; a++){
-	        if(connDataInput[connDataKeys[a]].dateVisited){
+	    for(let i=0; i<=connDataKeys.length; i++){
+	        if(connDataInput[connDataKeys[i]].dateVisited){
 			
-		    visitedMonth = connDataInput[connDataKeys[a]].dateVisited[5] +
-				  connDataInput[connDataKeys[a]].dateVisited[6];
+		    visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] +
+				  connDataInput[connDataKeys[i]].dateVisited[6];
 
 		    if(visitedMonth === todayMonth){
 
-	                visitedDay = connDataInput[connDataKeys[a]].dateVisited[8] + 
-			            connDataInput[connDataKeys[a]].dateVisited[9];
+	                visitedDay = connDataInput[connDataKeys[i]].dateVisited[8] + 
+			            connDataInput[connDataKeys[i]].dateVisited[9];
 
 		        switch(visitedDay){
 		            case "01": dayCount[0] += 1; break;
@@ -220,9 +220,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	var ipCount = {};
 
 	// count the number of times each unique IP has connected
-	for(var i=0; i<=connDataKeys.length; i++){
+	for(let i=0; i<=connDataKeys.length; i++){
 	    
-	    visitorIP = connDataInput[connDataKeys[key]].ipAddress;
+	    visitorIP = connDataInput[connDataKeys[i]].ipAddress;
 
 	    if(visitorIP) {
 		if(visitorIP in ipCount){
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var uniqueIPs = Object.keys(ipCount);
 
-	for(var i=0; i<=uniqueIPs.length; i++){
+	for(let i=0; i<=uniqueIPs.length; i++){
 	    console.log(uniqueIPs[i]);
             var visitorTable = document.getElementById("topVisitorTable");
 
