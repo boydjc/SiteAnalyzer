@@ -239,6 +239,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var uniqueIPs = Object.keys(ipCount);
 
+	console.log(uniqueIPs);
+
 	for(ip in uniqueIPs){
 	    console.log(uniqueIPs[ip]);
             var visitorTable = document.getElementById("topVisitorTable");
