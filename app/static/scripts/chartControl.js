@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    // counts the occurance of connections per month
 	    for(let i=0; i<=connDataKeys.length; i++){
+		console.log(i);
 	        if(connDataInput[connDataKeys[i]].dateVisited){
-
 	            visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] + 
 			        connDataInput[connDataKeys[i]].dateVisited[6];
 
