@@ -217,16 +217,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawVisitorBarChart(connDataInput) {
         var connDataKeys = Object.keys(connDataInput);
+	var ipCount = {};
 
 	for(key in connDataKeys){
 	    
 	    visitorIP = connDataInput[connDataKeys[key]].ipAddress;
 
 	    if(visitorIP) {
-		console.log(visitorIP);
+		if(visitorIP in ipCount){
+		    ipCount[visitorIP] += 1;
+		}else {
+		    ipCount[visitorIP] = 1;
+		}
 	    }
-
 	}
+
+	console.log(ipCount);
     }
 
     /*********************************
