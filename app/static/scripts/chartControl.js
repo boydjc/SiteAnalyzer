@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", function(){
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
 		drawConnChart(connectionData, timeSeriesSelect.value);
+		drawVisitorBarChart(connectionData);
 	    }else{
 	        drawConnChart(connectionData, timeSeriesSelect.value);
+		drawVisitorBarChart(connectionData);
 	    }
 	}
 	xhttp.open("GET", "/data", true);
@@ -234,7 +236,6 @@ document.addEventListener("DOMContentLoaded", function(){
     // get the data once when the page loads
     // and then again if the refresh data button is clicked
     getDataUpdate();
-    drawVisitorBarChart();
 
     // Get updated connection data from server
     this.getElementById("refreshButton").addEventListener("click", function(){
