@@ -236,14 +236,11 @@ document.addEventListener("DOMContentLoaded", function(){
 	// for each unique IP, add a new row to the 
 	// topVisitorDiv table on the page
 	
-	console.log(ipCount);
 
 	var uniqueIPs = Object.keys(ipCount);
 
-	console.log(uniqueIPs);
-
 	for(ip in uniqueIPs){
-	    console.log(ip);
+	    console.log(uniqueIPs[ip]);
             var visitorTable = document.getElementById("topVisitorTable");
 
 	    var tableRow = visitorTable.insertRow(ip+1);
