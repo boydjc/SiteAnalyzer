@@ -32,10 +32,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var connDataKeys = Object.keys(connDataInput);
 
-	console.log(connDataKeys);
-	console.log(connDataKeys[0]);
-	console.log(connDataKeys[1]);
-
 	var labels = {};
 	var data = {};
 	var config = {};
@@ -130,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		            0, 0, 0];
 
 	    // counts the occurance of connections per month
-	    for(let i=0; i<=connDataKeys.length; i++){
+	    for(let i=0; i<=connDataKeys.length-1; i++){
 	        if(connDataInput[connDataKeys[i]].dateVisited){
 			
 		    visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] +
@@ -225,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var ipCount = {};
 
 	// count the number of times each unique IP has connected
-	for(let i=0; i<=connDataKeys.length; i++){
+	for(let i=0; i<=connDataKeys.length-1; i++){
 	    
 	    visitorIP = connDataInput[connDataKeys[i]].ipAddress;
 
@@ -244,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var uniqueIPs = Object.keys(ipCount);
 
-	for(let i=0; i<=uniqueIPs.length; i++){
+	for(let i=0; i<=uniqueIPs.length-1; i++){
 	    console.log(uniqueIPs[i]);
             var visitorTable = document.getElementById("topVisitorTable");
 
