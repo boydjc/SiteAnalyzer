@@ -241,28 +241,13 @@ document.addEventListener("DOMContentLoaded", function(){
 	for(ip in uniqueIPs){
             visitorTable = document.getElementById("topVisitorDiv");
 
-	    // first cell in the table that contains the 
-	    // unique IP
-	    var tableRow = document.createElement("TR");
-	    var tableData = document.createElement("TD");
-	    var ipNode = document.createTextNode(ip);
+	    var tableRow = visitorTable.insertRow(0);
 	    
-	    tableData.appendChild(ipNode);
-	    tableRow.appendChild(tableData);
+	    var ipCell = tableRow.insertCell(0);
+	    var ipCount = tableRow.insertCell(1);
 
-	    // second cell that contains the count and the bar chart div
-	    tableData = document.createElement("TD");
-	    var ipCountNode = document.createTextNode(ipCount[uniqueIPs[ip]]);
-	    var ipCountBarDiv = document.createElement("DIV");
-
-	    ipCountBarDiv.setAttribute('id', 'visitorBar' + ip);
-	    ipCountBarDiv.setAttribute('class', 'visitorBar');
-
-	    tableData.appendChild(ipCountNode);
-	    tableData.appendChild(ipCountBarDiv);
-	    tableRow.appendChild(tableData);
-
-	    visitorTable.appendChild(tableRow);
+	    ipCell.innerHTML = uniqueIPs[ip];
+	    ipCount = ipCount[uniqueIPs][ip];
 	}
     }
 
