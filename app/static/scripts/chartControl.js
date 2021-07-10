@@ -219,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var connDataKeys = Object.keys(connDataInput);
 	var ipCount = {};
 
+	// count the number of times each unique IP has connected
 	for(key in connDataKeys){
 	    
 	    visitorIP = connDataInput[connDataKeys[key]].ipAddress;
@@ -232,7 +233,34 @@ document.addEventListener("DOMContentLoaded", function(){
 	    }
 	}
 
-	console.log(ipCount);
+	// for each unique IP, add a new row to the 
+	// topVisitorDiv table on the page
+	
+	var uniqueIPs = Object.keys(ipCount);
+
+	for(ip in uniqueIPs){
+            visitorTable = document.getElementById("topVisitorDiv");
+
+	    // first cell in the table that contains the 
+	    // unique IP
+	    var tableRow = document.createElement("TR");
+	    var tableData = document.createElement("TD");
+	    var ipNode = document.createTextNode(ip);
+	    
+	    tableData.appendChild(ipNode);
+	    tableRow.appendChild(tableData);
+
+	    // second cell that contains the count and the bar chart div
+	    tableData = document.createElement("TD");
+	    var ipCountNode = document.createTextNode(ipCount[uniqueIPs[ip]]
+	    var ipCountBarDiv = document.createElement("DIV");
+
+	    ipCountBarDiv.setAttribute('id', 'visitorBar' + ip);
+	    ipCountBarDiv.setAttribute('class', 'visitorBar');
+
+	    tableData.appendChild(ipCountNode);
+	    tableData.appendChild(ipCountBarDiv);
+	}
     }
 
     /*********************************
