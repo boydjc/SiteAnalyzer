@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function(){
     function drawConnChart(connDataInput, timeSeries) {
 
 	var connDataKeys = Object.keys(connDataInput);
+
+	console.log(connDataKeys);
+
 	var labels = {};
 	var data = {};
 	var config = {};
