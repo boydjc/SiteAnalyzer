@@ -276,12 +276,13 @@ document.addEventListener("DOMContentLoaded", function(){
 		options: {
 		    plugins: {
                         legend: {
-			    display: false
-			}
+			    display: false,
+			},
 			title: {
-			    display: false
+			    display: false,
 			}
 		    }
+
 		    indexAxis: 'y'
 		}
 	    }
