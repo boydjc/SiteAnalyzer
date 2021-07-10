@@ -285,6 +285,9 @@ document.addEventListener("DOMContentLoaded", function(){
 		    scales: {
 			x: {
 			    display: false,
+			    title: {
+				display: false,
+			    }
 			},
 			y: {
                             title: {
