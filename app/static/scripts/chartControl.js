@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ipCell.innerHTML = uniqueIPs[i];
 	    var barCanvasDiv = document.createElement("DIV");
-	    barCanvasDiv.setAttribute('id' 'visitorBarDiv' + i);
+	    barCanvasDiv.setAttribute('id', 'visitorBarDiv' + i);
 	    var barCanvas = document.createElement("CANVAS");
 	    barCanvas.setAttribute('id', 'visitorBar' + i);
 	    barCanvasDiv.appendChild(barCanvas);
