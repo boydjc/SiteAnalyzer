@@ -286,11 +286,17 @@ document.addEventListener("DOMContentLoaded", function(){
 			    display: false,
 			    title: {
 				display: false,
+			    },
+			    grid: {
+				display: false,
 			    }
 			},
 			y: {
                             title: {
 			        display: false,
+			    },
+			    grid: {
+				display: false,
 			    }
 			}
 		    },
