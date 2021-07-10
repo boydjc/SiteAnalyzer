@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	var connDataKeys = Object.keys(connDataInput);
 
 	console.log(connDataKeys);
+	console.log(connDataKeys[0]);
+	console.log(connDataKeys[1]);
 
 	var labels = {};
 	var data = {};
