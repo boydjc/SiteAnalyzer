@@ -213,6 +213,18 @@ document.addEventListener("DOMContentLoaded", function(){
 	var myChart = new Chart(document.getElementById('myChart'), config);
     }
 
+    function drawVisitorBarChart(connDataInput) {
+        var connDataKeys = Object.keys(connDataInput);
+
+	for(key in connDataKeys){
+	    
+	    visitedIP = connDataInput[connDataKeys[key]].ipAddress;
+
+	    console.log(visitedIP);
+
+	}
+    }
+
     /*********************************
      *    End Function Declaration   *
      ********************************/
@@ -220,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // get the data once when the page loads
     // and then again if the refresh data button is clicked
     getDataUpdate();
+    drawVisitorBarChart();
 
     // Get updated connection data from server
     this.getElementById("refreshButton").addEventListener("click", function(){
