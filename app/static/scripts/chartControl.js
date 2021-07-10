@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			    display: false,
 			}
 		    }, 
-		    scales[x] {
+		    scales[x]: {
 			title: {
 			    display: false,
 			}
