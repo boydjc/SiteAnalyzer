@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var octCount = 0; var novCount = 0; var decCount = 0;
 
 	    // counts the occurance of connections per month
-	    for(var i=0; i<=connDataKeys; i++){
+	    for(var i=0; i<=connDataKeys.length; i++){
 	        if(connDataInput[connDataKeys[i]].dateVisited){
 
 	            visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] + 
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		            0, 0, 0];
 
 	    // counts the occurance of connections per month
-	    for(var i=0; i<=connDataKeys; i++){
+	    for(var i=0; i<=connDataKeys.length; i++){
 	        if(connDataInput[connDataKeys[i]].dateVisited){
 			
 		    visitedMonth = connDataInput[connDataKeys[i]].dateVisited[5] +
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var uniqueIPs = Object.keys(ipCount);
 
-	for(var i=0; i<=uniqueIPs; i++){
+	for(var i=0; i<=uniqueIPs.length; i++){
 	    console.log(uniqueIPs[i]);
             var visitorTable = document.getElementById("topVisitorTable");
 
