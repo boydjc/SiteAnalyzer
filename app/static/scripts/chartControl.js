@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[ip];
-	    ipCountCell = ipCount[uniqueIPs][ip];
+	    ipCountCell = ipCount[uniqueIPs[ip]];
 	}
     }
 
