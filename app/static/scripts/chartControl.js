@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    // second cell that contains the count and the bar chart div
 	    tableData = document.createElement("TD");
-	    var ipCountNode = document.createTextNode(ipCount[uniqueIPs[ip]]
+	    var ipCountNode = document.createTextNode(ipCount[uniqueIPs[ip]]);
 	    var ipCountBarDiv = document.createElement("DIV");
 
 	    ipCountBarDiv.setAttribute('id', 'visitorBar' + ip);
