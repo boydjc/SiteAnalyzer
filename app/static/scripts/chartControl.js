@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		    }, 
 		    scales: {
 			x: {
-			    display: false;
+			    display: false,
 			}
 		    },
 
