@@ -252,6 +252,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var barCanvas = document.createElement("CANVAS");
 	    barCanvas.setAttribute('id', 'visitorBar' + i);
 	    barCanvas.setAttribute('class', 'visitorBar');
+	    barCanvas.setAttribute('height', '10');
+	    barCanvas.setAttribute('width', '20);
 	    ipCountCell.appendChild(barCanvas);
 
 	    // draw the bar chart in the div
