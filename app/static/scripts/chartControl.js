@@ -273,7 +273,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	    const config = {
 		type: 'bar',
 		data,
-		options: {}
+		options: {
+		    indexAxis: 'y'
+		}
 	    }
 	    
 	    var barChart = new Chart(barDiv, config);
