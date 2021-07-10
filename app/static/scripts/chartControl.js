@@ -249,12 +249,12 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[i];
+	    var barCanvasDiv = document.createElement("DIV");
+	    barCanvasDiv.setAttribute('id' 'visitorBarDiv' + i);
 	    var barCanvas = document.createElement("CANVAS");
 	    barCanvas.setAttribute('id', 'visitorBar' + i);
-	    barCanvas.setAttribute('class', 'visitorBar');
-	    barCanvas.setAttribute('height', '10');
-	    barCanvas.setAttribute('width', '20');
-	    ipCountCell.appendChild(barCanvas);
+	    barCanvasDiv.appendChild(barCanvas);
+	    ipCountCell.appendChild(barCanvasDiv);
 
 	    // draw the bar chart in the div
 	    barCanvas = document.getElementById("visitorBar" + i);
