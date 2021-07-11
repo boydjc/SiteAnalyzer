@@ -96,5 +96,7 @@ body {
     text-align: center;
 }
 
-
+.visitorBarDiv {
+    border: 1px solid black;
+}
 
