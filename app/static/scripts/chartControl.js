@@ -219,6 +219,7 @@ document.addEventListener("DOMContentLoaded", function(){
     function drawVisitorBarChart(connDataInput) {
         var connDataKeys = Object.keys(connDataInput);
 	var ipCount = {};
+	var maxVisits = 0;
 
 	// count the number of times each unique IP has connected
 	for(let i=0; i<=connDataKeys.length-1; i++){
@@ -234,10 +235,17 @@ document.addEventListener("DOMContentLoaded", function(){
 	    }
 	}
 
+	var uniqueIPs = Object.keys(ipCount);
+	
+	// find the max number of visits to set the axis on the charts
+	for(let i=0; i<=uniqueIPs.length-1; i++){
+            if(ipCount[uniqueIPs[i]] > maxVisits){
+                maxVisits = ipCount[uniqueIPs[i]];
+	    }
+	}
+
 	// for each unique IP, add a new row to the 
 	// topVisitorDiv table on the page
-	
-	var uniqueIPs = Object.keys(ipCount);
 
 	for(let i=0; i<=uniqueIPs.length-1; i++){
 
@@ -292,6 +300,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		    scales: {
 			x: {
 			    display: false,
+			    min: 0,
+			    max: maxVisits, 
 			    title: {
 				display: false,
 			    },
