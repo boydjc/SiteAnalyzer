@@ -258,16 +258,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// for each unique IP, add a new row to the 
 	// topVisitorDiv table on the page
+	
+	var visitorTable = document.getElementById("topVisitorTable");
+
+	// delete any old rows while keeping the header rows
+	while(visitorTable.rows.length > 1){
+	    visitorTable.deleteRow(1);
+	}
 
 	for(let i=0; i<=uniqueIPs.length-1; i++){
-
-            var visitorTable = document.getElementById("topVisitorTable");
-
-	    // delete any old rows, while keeping the header rows
-	
-	    if(visitorTable.rows.length > 1){
-                visitorTable.deleteRow(1);
-	    }
 
 	    var tableRow = visitorTable.insertRow(i+1);
 	    
