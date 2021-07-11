@@ -99,6 +99,7 @@ body {
 .visitorBarDiv {
     border: 1px solid black;
     float: right;
+    margin-right: 2em;
     height: 2em;
     width: 5em;
 }
