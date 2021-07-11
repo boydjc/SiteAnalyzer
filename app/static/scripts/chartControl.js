@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		    label: 'Visits',
 		    backgroundColor: 'rgb(0, 0, 255)',
 		    borderColor: 'rgb(0, 0, 255)',
-		    data: [10],
+		    data: [ipCount[uniqueIPs[i]]],
 		}]
 	    };
 
