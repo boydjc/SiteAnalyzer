@@ -88,19 +88,14 @@ body {
     width: 100%;
 }
 
-#topVisitorDiv tr, td {
-    border: 1px solid black;
-}
-
 #topVisitorDiv td {
     text-align: center;
     padding-top: 1em;
 }
 
 .visitorBarDiv {
-    border: 1px solid black;
     float: right;
-    margin-right: 3em;
+    margin-right: 1em;
     height: 2em;
     width: 10em;
     margin-top: -0.5em;
