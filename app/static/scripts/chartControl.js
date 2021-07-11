@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	var uniqueIPs = Object.keys(ipCount);
 
-	const ipCount = Object.fromEntries(
+	ipCount = Object.fromEntries(
 	    Object.entries(ipCount).sort(([,a],[,b]) => a-b)
 	);
 
