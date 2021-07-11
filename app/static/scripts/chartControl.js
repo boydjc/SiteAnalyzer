@@ -250,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ipCell.innerHTML = uniqueIPs[i];
 	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
+	    ipCountCell.setAttribute('class', 'textAlignRight');
 			
 	    var barCanvasDiv = document.createElement("DIV");
 	    barCanvasDiv.setAttribute('class', 'visitorBarDiv');

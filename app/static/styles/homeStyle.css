@@ -89,7 +89,7 @@ body {
 }
 
 #topVisitorDiv td {
-    text-align: right;
+    text-align: center;
     padding-top: 1em;
 }
 
@@ -99,5 +99,9 @@ body {
     height: 2em;
     width: 10em;
     margin-top: -0.5em;
+}
+
+.textAlignRight {
+    text-align: right;
 }
 
