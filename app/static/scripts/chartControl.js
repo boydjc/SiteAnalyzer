@@ -249,10 +249,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[i];
-
-	    var ipCountSpan = document.createElement("SPAN");
-	    ipCountSpan.setAttribute('class', 'visitorCountSpan');
-	    ipCountSpan.innerHTML = ipCount[uniqueIPs[i]];
+	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
 			
 	    var barCanvasDiv = document.createElement("DIV");
 	    barCanvasDiv.setAttribute('class', 'visitorBarDiv');
@@ -260,7 +257,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	    barCanvas.setAttribute('id', 'visitorBarCanvas' + i);
 	    barCanvasDiv.appendChild(barCanvas);
 	 
-	    ipCountCell.appendChild(ipCountSpan);
 	    ipCountCell.appendChild(barCanvasDiv);
 
 	    // draw the bar chart in the div
