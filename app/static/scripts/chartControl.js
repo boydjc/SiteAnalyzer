@@ -249,6 +249,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[i];
+	    ipCell.setAttribute('class', 'textAlignLeft');
+
 	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
 	    ipCountCell.setAttribute('class', 'textAlignRight');
 			
