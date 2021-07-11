@@ -255,6 +255,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	    barCanvasDiv.setAttribute('class', 'visitorBarDiv');
 	    var barCanvas = document.createElement("CANVAS");
 	    barCanvas.setAttribute('id', 'visitorBarCanvas' + i);
+	    barCanvas.setAttribute('height', '5');
+	    barCanvas.setAttribute('width', '10');
 	    barCanvasDiv.appendChild(barCanvas);
 	    ipCountCell.appendChild(barCanvasDiv);
 
