@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var ipCountCell = tableRow.insertCell(1);
 
 	    ipCell.innerHTML = uniqueIPs[i];
-	    ipCell.setAttribute('class', 'textAlignLeft');
+	    ipCell.setAttribute('class', 'textAlignCenter');
 
 	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
 	    ipCountCell.setAttribute('class', 'textAlignRight');
