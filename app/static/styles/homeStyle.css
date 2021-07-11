@@ -98,5 +98,8 @@ body {
 
 .visitorBarDiv {
     border: 1px solid black;
+    float: right;
+    height: 2em;
+    width: 5em;
 }
 
