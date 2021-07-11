@@ -237,14 +237,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// now that our ip count object has been created,
 	// sort the values from largest to smallest
-	
-	var uniqueIPs = Object.keys(ipCount);
 
 	ipCount = Object.fromEntries(
 	    Object.entries(ipCount).sort(([,a],[,b]) => b-a)
 	);
 
 	console.log(ipCount);
+
+	var uniqueIPs = Object.keys(ipCount);
 	
 	// find the max number of visits to set the axis on the charts
 	for(let i=0; i<=uniqueIPs.length-1; i++){
