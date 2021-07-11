@@ -307,7 +307,9 @@ document.addEventListener("DOMContentLoaded", function(){
 			}
 		    },
 
-		    indexAxis: 'y'
+		    indexAxis: 'y',
+		    responsive: true,
+		    maintainAspectRatio: false
 		}
 	    }
 	    
