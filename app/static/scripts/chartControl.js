@@ -263,6 +263,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
             var visitorTable = document.getElementById("topVisitorTable");
 
+	    // delete any old rows, while keeping the header rows
+	
+	    if(visitorTable.rows.length > 1){
+                visitorTable.deleteRow(1);
+	    }
+
 	    var tableRow = visitorTable.insertRow(i+1);
 	    
 	    var ipCell = tableRow.insertCell(0);
