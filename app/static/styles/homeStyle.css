@@ -107,3 +107,9 @@ body {
     text-align: right;
 }
 
+#geoMapDiv {
+    width: 50em;
+    height: 20em;
+    border: 2px solid black;
+}
+
