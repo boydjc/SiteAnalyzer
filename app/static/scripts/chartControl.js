@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// background image plugin
 	const backgroundImage = new Image();
-	backgroundImage.src = '../images/US-Blank-map.jpg';
+	backgroundImage.src = '../app/static/images/US-Blank-map.jpg';
 
 	const backgroundImgPlugin = {
 	    id: 'custom_canvas_background_image',
