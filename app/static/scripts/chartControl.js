@@ -1,3 +1,14 @@
+import {ScatterController} from 'chart.js';
+
+class GeoMap extends ScatterController {
+    draw() {
+	// Call scatter controller method to draw all the points 
+	super.draw(arguments);
+    }
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
 
 
@@ -27,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     // draws chart for connections, 
-    
     function drawConnChart(connDataInput, timeSeries) {
 
 	var connDataKeys = Object.keys(connDataInput);
@@ -222,6 +232,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	var myChart = new Chart(document.getElementById('myChart'), config);
     }
 
+
+    // draws the small bar graph next to the top visitor list
     function drawVisitorBarChart(connDataInput) {
         var connDataKeys = Object.keys(connDataInput);
 	var ipCount = {};
@@ -350,6 +362,36 @@ document.addEventListener("DOMContentLoaded", function(){
 	        var barChart = new Chart(barCanvas, config);
 	    }
 	}	
+    }
+
+    function drawGeoMap(connDataInput){
+
+	geoCanvas = document.getElementById("geoChart");
+
+        const data = {
+	    datasets: [{
+	        label: 'First Dataset',
+		data: [{
+		    x: 20,
+		    y: 30,
+		    r: 15
+		},
+		{
+		    x: 40,
+		    y: 10,
+		    r: 10
+		}],
+		background-color: 'rgb(255, 99, 132)'
+	    }]
+	};
+	
+	const config = {
+	    type: 'bubble',
+	    data: data,
+	    options: {}
+	};
+
+	var geoChart = new Chart(geoCanvas, config);
     }
 
     /*********************************
