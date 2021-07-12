@@ -362,6 +362,25 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawGeoMap(connDataInput){
 
+	// background image plugin
+	const backgroundImage = new Image();
+	backgroundImage.src = '../images/US-Blank-map.jpg';
+
+	const backgroundImgPlugin = {
+	    id: 'custom_canvas_background_image',
+	    beforeDraw: (chart) => {
+		if(image.complete) {
+		    const ctx = chart.ctx;
+		    const {top, left, width, height} = chart.chartArea;
+		    const x = left + width / 2 - image.width / 2;
+		    const y = top + height / 2 - image.height / 2;
+		    ctx.drawImage(image, x, y);
+		} else {
+		    image.onload = () => chart.draw();
+		}
+	    }
+	};
+
 	geoCanvas = document.getElementById("geoChart");
 
         const data = {
@@ -384,6 +403,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	const config = {
 	    type: 'bubble',
 	    data: data,
+	    plugins: [backgroundImgPlugin],
 	    options: {
 		responsive: true,
 		maintainAspectRatio: false
