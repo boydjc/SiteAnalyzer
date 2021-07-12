@@ -111,5 +111,6 @@ body {
     width: 50em;
     height: 20em;
     border: 2px solid black;
+    float: left;
 }
 
