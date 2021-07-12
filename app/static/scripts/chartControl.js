@@ -16,10 +16,17 @@ document.addEventListener("DOMContentLoaded", function(){
 	    if(Chart.getChart('myChart')){
                 Chart.getChart('myChart').destroy();
 		drawConnChart(connectionData, timeSeriesSelect.value);
-		drawVisitorBarChart(connectionData);
 	    }else{
 	        drawConnChart(connectionData, timeSeriesSelect.value);
-		drawVisitorBarChart(connectionData);
+	    }
+
+	    drawVisitorBarChart(connectionData);
+
+	    if(Chart.getChart('geoChart')){
+		Chart.getChart('geoChart').destroy();
+		drawGeoMap(connectionData);
+	    }else{
+		drawGeoMap(connectionData);
 	    }
 	}
 	xhttp.open("GET", "/data", true);
