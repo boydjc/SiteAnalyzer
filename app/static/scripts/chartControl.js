@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		        responsive: true,
 		        maintainAspectRatio: false
 		    }
-	        }
+	        };
 	    
 	        var barChart = new Chart(barCanvas, config);
 	    }
@@ -384,7 +384,10 @@ document.addEventListener("DOMContentLoaded", function(){
 	const config = {
 	    type: 'bubble',
 	    data: data,
-	    options: {}
+	    options: {
+		responsive: true,
+		maintainAspectRatio: false
+	    }
 	};
 
 	var geoChart = new Chart(geoCanvas, config);
