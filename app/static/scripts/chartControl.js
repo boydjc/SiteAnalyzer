@@ -210,7 +210,13 @@ document.addEventListener("DOMContentLoaded", function(){
         config = {
             type: 'line',
 	    data, 
-	    options: {}
+	    options: {
+	        plugins: {
+                    legend: {
+			display: false,
+		    },
+		}, 
+	    }
 	}
 
 	var myChart = new Chart(document.getElementById('myChart'), config);
