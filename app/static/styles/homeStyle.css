@@ -57,7 +57,7 @@ body {
 }
 
 #navBar {
-    width: 84em;
+    width: 83.5em;
     border-bottom: 2px solid black;
 }
 
@@ -108,7 +108,7 @@ body {
 }
 
 #geoMapDiv {
-    width: 60em;
+    width: 75em;
     height: 30em;
     border: 2px solid black;
     float: left;
