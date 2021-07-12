@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		    y: 10,
 		    r: 10
 		}],
-		backgroundColor: 'rgb(255, 99, 132)'
+		backgroundColor: 'rgb(0, 0, 0)'
 	    }]
 	};
 	
