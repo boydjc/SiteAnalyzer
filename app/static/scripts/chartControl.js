@@ -242,12 +242,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    Object.entries(ipCount).sort(([,a],[,b]) => b-a)
 	);
 
-	console.log(ipCount);
-
 	var uniqueIPs = Object.keys(ipCount);
-
-	console.log(uniqueIPs);
-        
 	
 	// find the max number of visits to set the axis on the charts
 	for(let i=0; i<=uniqueIPs.length-1; i++){
