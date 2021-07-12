@@ -1,14 +1,3 @@
-import {ScatterController} from 'https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js';
-
-class GeoMap extends ScatterController {
-    draw() {
-	// Call scatter controller method to draw all the points 
-	super.draw(arguments);
-    }
-}
-
-
-
 document.addEventListener("DOMContentLoaded", function(){
 
 
