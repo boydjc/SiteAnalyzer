@@ -1,4 +1,4 @@
-import {ScatterController} from 'chart.js';
+import {ScatterController} from 'https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js';
 
 class GeoMap extends ScatterController {
     draw() {
