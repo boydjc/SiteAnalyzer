@@ -266,83 +266,88 @@ document.addEventListener("DOMContentLoaded", function(){
 	    visitorTable.deleteRow(1);
 	}
 
+	
 	for(let i=0; i<=uniqueIPs.length-1; i++){
+	
+	    // only put the top 10 visitors
+	    if(visitorTable.rows.length < 12) { 
 
-	    var tableRow = visitorTable.insertRow(i+1);
+	        var tableRow = visitorTable.insertRow(i+1);
 	    
-	    var ipCell = tableRow.insertCell(0);
-	    var ipCountCell = tableRow.insertCell(1);
+	        var ipCell = tableRow.insertCell(0);
+	        var ipCountCell = tableRow.insertCell(1);
 
-	    ipCell.innerHTML = uniqueIPs[i];
-	    ipCell.setAttribute('class', 'textAlignCenter');
+	        ipCell.innerHTML = uniqueIPs[i];
+	        ipCell.setAttribute('class', 'textAlignCenter');
 
-	    ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
-	    ipCountCell.setAttribute('class', 'textAlignRight');
+	        ipCountCell.innerHTML = ipCount[uniqueIPs[i]];
+	        ipCountCell.setAttribute('class', 'textAlignRight');
 			
-	    var barCanvasDiv = document.createElement("DIV");
-	    barCanvasDiv.setAttribute('class', 'visitorBarDiv');
-	    var barCanvas = document.createElement("CANVAS");
-	    barCanvas.setAttribute('id', 'visitorBarCanvas' + i);
-	    barCanvasDiv.appendChild(barCanvas);
+	        var barCanvasDiv = document.createElement("DIV");
+	        barCanvasDiv.setAttribute('class', 'visitorBarDiv');
+	        var barCanvas = document.createElement("CANVAS");
+	        barCanvas.setAttribute('id', 'visitorBarCanvas' + i);
+	        barCanvasDiv.appendChild(barCanvas);
 	 
-	    ipCountCell.appendChild(barCanvasDiv);
+	        ipCountCell.appendChild(barCanvasDiv);
 
-	    // draw the bar chart in the div
-	    barCanvas = document.getElementById("visitorBarCanvas" + i);
+	        // draw the bar chart in the div
+	        barCanvas = document.getElementById("visitorBarCanvas" + i);
 	   
-	    const labels = [''];
+	        const labels = [''];
 
-	    const data = {
-		labels: labels,
-		datasets: [{
-		    label: 'Visits',
-		    backgroundColor: 'rgb(0, 0, 255)',
-		    borderColor: 'rgb(0, 0, 255)',
-		    data: [ipCount[uniqueIPs[i]]],
-		}]
-	    };
+	        const data = {
+		    labels: labels,
+		    datasets: [{
+		        label: 'Visits',
+		        backgroundColor: 'rgb(0, 0, 255)',
+		        borderColor: 'rgb(0, 0, 255)',
+		        data: [ipCount[uniqueIPs[i]]],
+		    }]
+	        };
 
-	    const config = {
-		type: 'bar',
-		data,
-		options: {
-		    plugins: {
-                        legend: {
-			    display: false,
-			},
-			title: {
-			    display: false,
-			}
-		    }, 
-		    scales: {
-			x: {
-			    display: false,
-			    min: 0,
-			    max: maxVisits, 
-			    title: {
-				display: false,
-			    },
-			    grid: {
-				display: false,
-			    }
-			},
-			y: {
-                            title: {
+	        const config = {
+		    type: 'bar',
+		    data,
+		    options: {
+		        plugins: {
+                            legend: {
 			        display: false,
 			    },
-			    grid: {
-				display: false,
+			    title: {
+			        display: false,
 			    }
-			}
-		    },
+		        }, 
+		        scales: {
+			    x: {
+			        display: false,
+			        min: 0,
+			        max: maxVisits, 
+			        title: {
+				    display: false,
+			        },
+			        grid: {
+				    display: false,
+			        }
+			    },
+			    y: {
+                                title: {
+			            display: false,
+			        },
+			        grid: {
+				    display: false,
+			        }
+			    }
+		        },
 
-		    indexAxis: 'y',
-		    responsive: true,
-		    maintainAspectRatio: false
-		}
-	    }
+		        indexAxis: 'y',
+		        responsive: true,
+		        maintainAspectRatio: false
+		    }
+	        }
 	    
-	    var barChart = new Chart(barCanvas, config);
+	        var barChart = new Chart(barCanvas, config);
+	    }
 	}	
     }
 
