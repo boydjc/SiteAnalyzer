@@ -406,7 +406,19 @@ document.addEventListener("DOMContentLoaded", function(){
 	    plugins: [backgroundImgPlugin],
 	    options: {
 		responsive: true,
-		maintainAspectRatio: false
+		maintainAspectRatio: false,
+		scales: {
+		    x: {
+			grid: {
+			    display: false,
+			}
+		    },
+		    y: {
+			grid: {
+			    display: false,
+			}
+		    }
+		}
 	    }
 	};
 
