@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			    display: false,
 			},
 			min: 0,
-			max: 50
+			max: 60
 		    },
 		    y: {
 			grid: {
