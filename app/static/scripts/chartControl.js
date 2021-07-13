@@ -1,4 +1,4 @@
-class Custom extends BubbleController {
+class Custom extends Chart.BubbleController {
     draw() {
 	
 	// Call bubble controller method to draw all the points
