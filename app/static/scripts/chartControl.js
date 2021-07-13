@@ -415,9 +415,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	    datasets: [{
 	        label: 'First Dataset',
 		data: [{
-		    // 
-		    x: 32,
-		    y: 20,
+		    // Wyoming for now
+		    x: 34,
+		    y: 23,
 		    r: 10
 		},
 		{
