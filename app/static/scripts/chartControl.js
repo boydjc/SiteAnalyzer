@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	    const meta = this.getMeta();
 	
-	    // first point is wyoming for now 
+	    // first point is washington for now 
 	    const pt0 = meta.data[0];
 
 	    const {x, y} = pt0.getProps(['x', 'y']);
@@ -422,9 +422,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	    datasets: [{
 	        label: 'First Dataset',
 		data: [{
-		    // Wyoming for now
-		    x: 33,
-		    y: 21,
+		    // Washington for now
+		    x: 21,
+		    y: 28,
 		    r: 10
 		},
 		{
