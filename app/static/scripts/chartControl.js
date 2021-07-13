@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    ctx.lineWidth = 3;
 	    ctx.moveTo(5, 5);
 	    ctx.lineTo(100, 5);
-	    ctx.lineTo(50, 100);
+	    ctx.lineTo(100, 100);
 	    ctx.stroke();
 	    ctx.restore();
 
