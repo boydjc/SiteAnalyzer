@@ -423,8 +423,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	        label: 'First Dataset',
 		data: [{
 		    // Washington for now
-		    x: 21,
-		    y: 28,
+		    x: 24,
+		    y: 26,
 		    r: 10
 		},
 		{
