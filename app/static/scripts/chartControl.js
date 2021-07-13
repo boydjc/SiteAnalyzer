@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
             super.draw(arguments);
 	
 	    const meta = this.getMeta();
+	
+	    // first point is wyoming for now 
 	    const pt0 = meta.data[0];
 
 	    const {x, y} = pt0.getProps(['x', 'y']);
@@ -18,8 +20,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ctx.strokeStyle = 'red';
 	    ctx.lineWidth = 3;
-	    ctx.strokeRect(x - radius, y - radius, 2 * radius, 2 * radius);
+	    ctx.moveTo(5, 5);
+	    ctx.lineTo(100, 5);
+	    ctx.stroke();
 	    ctx.restore();
+
+	    // end first point
         }
     }
 
