@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    ctx.save();
 
 	    ctx.strokeStyle = 'red';
-	    ctx.lineWidth = 1;
+	    ctx.lineWidth = 3;
 	    ctx.strokeRect(x - radius, y - radius, 2 * radius, 2 * radius);
 	    ctx.restore();
         }
@@ -415,6 +415,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    datasets: [{
 	        label: 'First Dataset',
 		data: [{
+		    // 
 		    x: 28,
 		    y: 30,
 		    r: 10
@@ -435,6 +436,11 @@ document.addEventListener("DOMContentLoaded", function(){
 	    options: {
 		responsive: true,
 		maintainAspectRatio: false,
+		plugins: {
+		    tooltip: {
+		        enabled: false,
+		    }
+		},
 		scales: {
 		    x: {
 			grid: {
