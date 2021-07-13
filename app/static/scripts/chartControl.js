@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ctx.strokeStyle = 'red';
 	    ctx.lineWidth = 3;
-	    ctx.moveTo(330, 50);
+	    ctx.moveTo(335, 50);
 	    ctx.lineTo(350, 50);
 	    ctx.lineTo(350, 75);
 	    ctx.stroke();
