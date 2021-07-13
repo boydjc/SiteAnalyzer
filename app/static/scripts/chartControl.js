@@ -416,8 +416,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	        label: 'First Dataset',
 		data: [{
 		    // 
-		    x: 28,
-		    y: 30,
+		    x: 32,
+		    y: 20,
 		    r: 10
 		},
 		{
@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		maintainAspectRatio: false,
 		plugins: {
 		    tooltip: {
-		        enabled: false,
+		        enabled: true
 		    }
 		},
 		scales: {
