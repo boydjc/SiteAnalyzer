@@ -1,3 +1,5 @@
+import {BubbleController} from 'https://cdn.jsdeliver.net/npm/chart.js@3.4.1/dist/chart/min/js';
+
 document.addEventListener("DOMContentLoaded", function(){
 
 
