@@ -1,4 +1,33 @@
-import {BubbleController} from 'https://cdn.jsdeliver.net/npm/chart.js@3.4.1/dist/chart/min/js';
+class Custom extends BubbleController {
+    draw() {
+	
+	// Call bubble controller method to draw all the points
+        super.draw(arguments);
+	
+	const meta = this.getMeta();
+	const pt0 = meta.data[0];
+
+	const {x, y} = pt0.getProps(['x', 'y']);
+	const {radius} = pt0.options;
+
+	const ctx = this.chart.ctx;
+
+	ctx.save();
+
+	ctx.strokeStyle = 'red';
+	ctx.lineWidth = 1;
+	ctx.strokeRect(x - radius, y - radius, 2 * radius, 2 * radius);
+	ctx.restore();
+    }
+}
+
+Custom.id = 'derivedBubble';
+Custom.defaults = BubbleController.defaults;
+
+// Stores the controller so that the chart initialization routine can look it up
+Chart.register(Custom);
+
+
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -403,7 +432,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	
 	const config = {
-	    type: 'bubble',
+	    type: 'derivedBubble',
 	    data: data,
 	    plugins: [backgroundImgPlugin],
 	    options: {
