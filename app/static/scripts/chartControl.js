@@ -8,12 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	    const meta = this.getMeta();
 	
-	    // first point is washington for now 
-	    const pt0 = meta.data[0];
-
-	    const {x, y} = pt0.getProps(['x', 'y']);
-	    const {radius} = pt0.options;
-
+	    // first point is washington
 	    const ctx = this.chart.ctx;
 
 	    ctx.save();
@@ -21,8 +16,24 @@ document.addEventListener("DOMContentLoaded", function(){
 	    ctx.strokeStyle = 'red';
 	    ctx.lineWidth = 3;
 	    ctx.moveTo(335, 50);
-	    ctx.lineTo(350, 50);
-	    ctx.lineTo(350, 75);
+	    ctx.lineTo(347, 62.5);
+	    ctx.lineTo(350.5, 61);
+	    ctx.lineTo(351, 64);
+	    ctx.lineTo(358, 65);
+	    ctx.lineTo(359, 68);
+	    ctx.lineTo(351, 79);
+	    ctx.lineTo(352, 86);
+	    ctx.lineTo(356, 85);
+	    ctx.lineTo(361.5, 78);
+	    ctx.lineTo(363, 68);
+	    ctx.lineTo(358, 68);
+	    ctx.lineTo(359, 64);
+	    ctx.lineTo(363, 58);
+	    ctx.lineTo(363, 52);
+	    ctx.lineTo(368, 50);
+	    ctx.lineTo(437, 70);
+	    ctx.lineTo(424, 126);
+	    ctx.lineTo(410, 125);
 	    ctx.stroke();
 	    ctx.restore();
 
