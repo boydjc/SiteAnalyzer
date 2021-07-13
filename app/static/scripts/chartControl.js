@@ -415,9 +415,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	    datasets: [{
 	        label: 'First Dataset',
 		data: [{
-		    x: 20,
+		    x: 28,
 		    y: 30,
-		    r: 15
+		    r: 10
 		},
 		{
 		    x: 40,
@@ -440,11 +440,15 @@ document.addEventListener("DOMContentLoaded", function(){
 			grid: {
 			    display: false,
 			}
+			min: 0,
+			max: 50
 		    },
 		    y: {
 			grid: {
 			    display: false,
 			}
+			min: 0,
+			max: 30
 		    }
 		}
 	    }
