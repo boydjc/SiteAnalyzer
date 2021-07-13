@@ -439,14 +439,14 @@ document.addEventListener("DOMContentLoaded", function(){
 		    x: {
 			grid: {
 			    display: false,
-			}
+			},
 			min: 0,
 			max: 50
 		    },
 		    y: {
 			grid: {
 			    display: false,
-			}
+			},
 			min: 0,
 			max: 30
 		    }
