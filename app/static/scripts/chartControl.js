@@ -416,8 +416,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	        label: 'First Dataset',
 		data: [{
 		    // Wyoming for now
-		    x: 34,
-		    y: 23,
+		    x: 33,
+		    y: 21,
 		    r: 10
 		},
 		{
