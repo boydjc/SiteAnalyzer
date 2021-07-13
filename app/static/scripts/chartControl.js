@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-Custom.id = 'derivedBubble';
-Custom.defaults = BubbleController.defaults;
+    Custom.id = 'derivedBubble';
+    Custom.defaults = Chart.BubbleController.defaults;
 
-// Stores the controller so that the chart initialization routine can look it up
-Chart.register(Custom);
+    // Stores the controller so that the chart initialization routine can look it up
+    Chart.register(Custom);
 
     var connectionData;
 
