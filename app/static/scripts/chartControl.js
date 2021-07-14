@@ -8,13 +8,20 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	    const meta = this.getMeta();
 	
-	    // first point is washington
+	    this.drawWashington('100');
+	 }
+
+	// blueColorDepth is a value between 0 and 
+	// 255 which corresponds to how many values we
+	// have in the state. Ligher color means less values
+	drawWashington(blueColorDepth) {
+            // first point is washington
 	    const ctx = this.chart.ctx;
 
 	    ctx.save();
 
-	    ctx.strokeStyle = 'blue';
-	    ctx.fillStyle = 'blue';
+	    ctx.strokeStyle = 'rgb(0, 0, ' + blueColorDepth + ')';
+	    ctx.fillStyle = 'rgb(0, 0, ' + blueColorDepth + ')';
 	    ctx.lineWidth = 3;
 	    ctx.moveTo(335, 50);
 	    ctx.lineTo(347, 62.5); ctx.lineTo(350.5, 61); ctx.lineTo(351, 64); 
@@ -30,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function(){
 	    ctx.lineTo(335, 83); ctx.lineTo(331, 81); ctx.lineTo(333, 73);
 	    ctx.lineTo(331, 61); ctx.closePath();
 	    ctx.stroke();
-	    //ctx.fill();
+	    ctx.fill();
 	    ctx.restore();
-
 	    // end first point
-        }
+
+	}
     }
 
     Custom.id = 'derivedBubble';
