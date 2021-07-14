@@ -13,28 +13,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    ctx.save();
 
-	    ctx.strokeStyle = 'red';
+	    ctx.strokeStyle = 'blue';
+	    ctx.fillStyle = 'blue';
 	    ctx.lineWidth = 3;
 	    ctx.moveTo(335, 50);
-	    ctx.lineTo(347, 62.5);
-	    ctx.lineTo(350.5, 61);
-	    ctx.lineTo(351, 64);
-	    ctx.lineTo(358, 65);
-	    ctx.lineTo(359, 68);
-	    ctx.lineTo(351, 79);
-	    ctx.lineTo(352, 86);
-	    ctx.lineTo(356, 85);
-	    ctx.lineTo(361.5, 78);
-	    ctx.lineTo(363, 68);
-	    ctx.lineTo(358, 68);
-	    ctx.lineTo(359, 64);
-	    ctx.lineTo(363, 58);
-	    ctx.lineTo(363, 52);
-	    ctx.lineTo(368, 50);
-	    ctx.lineTo(437, 70);
-	    ctx.lineTo(424, 126);
-	    ctx.lineTo(410, 125);
+	    ctx.lineTo(347, 62.5); ctx.lineTo(350.5, 61); ctx.lineTo(351, 64); 
+	    ctx.lineTo(358, 65); ctx.lineTo(359, 68); ctx.lineTo(351, 79);
+	    ctx.lineTo(352, 86); ctx.lineTo(356, 85); ctx.lineTo(361.5, 78);
+	    ctx.lineTo(363, 68); ctx.lineTo(358, 68); ctx.lineTo(359, 64);
+	    ctx.lineTo(363, 58); ctx.lineTo(363, 52); ctx.lineTo(368, 50);
+	    ctx.lineTo(437, 70); ctx.lineTo(424, 125); ctx.lineTo(410, 125);
+	    ctx.lineTo(403, 123); ctx.lineTo(389, 123); ctx.lineTo(382, 121.5);
+	    ctx.lineTo(373, 122); ctx.lineTo(368, 120); ctx.lineTo(364, 121);
+	    ctx.lineTo(360, 118); ctx.lineTo(347, 120); ctx.lineTo(343, 114);
+	    ctx.lineTo(345, 103); ctx.lineTo(332, 97); ctx.lineTo(332, 90);
+	    ctx.lineTo(335, 83); ctx.lineTo(331, 81); ctx.lineTo(333, 73);
+	    ctx.lineTo(331, 61); ctx.closePath();
 	    ctx.stroke();
+	    //ctx.fill();
 	    ctx.restore();
 
 	    // end first point
