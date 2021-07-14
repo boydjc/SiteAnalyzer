@@ -361,77 +361,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawGeoMap(connDataInput){
 
-	// background image plugin
-	const backgroundImage = new Image();
-	backgroundImage.src = '../static/images/usa-map.png';
-
-	const backgroundImgPlugin = {
-	    id: 'custom_canvas_background_image',
-	    beforeDraw: (chart) => {
-		if(backgroundImage.complete) {
-		    const ctx = chart.ctx;
-		    const {top, left, width, height} = chart.chartArea;
-		    const x = left + width / 2 - backgroundImage.width / 2;
-		    const y = top + height / 2 - backgroundImage.height / 2;
-		    ctx.drawImage(backgroundImage, x, y);
-		} else {
-		    backgroundImage.onload = () => chart.draw();
-		}
-	    }
-	};
-
-	geoCanvas = document.getElementById("geoChart");
-
-        const data = {
-	    datasets: [{
-	        label: 'First Dataset',
-		data: [{
-		    // Washington for now
-		    x: 23,
-		    y: 27,
-		    r: 10
-		},
-		{
-		    x: 40,
-		    y: 10,
-		    r: 10
-		}],
-		backgroundColor: 'rgb(0, 0, 0)'
-	    }]
-	};
 	
-	const config = {
-	    type: 'derivedBubble',
-	    data: data,
-	    plugins: [backgroundImgPlugin],
-	    options: {
-		responsive: true,
-		maintainAspectRatio: false,
-		plugins: {
-		    tooltip: {
-		        enabled: true
-		    }
-		},
-		scales: {
-		    x: {
-			grid: {
-			    display: false,
-			},
-			min: 0,
-			max: 80
-		    },
-		    y: {
-			grid: {
-			    display: false,
-			},
-			min: 0,
-			max: 30
-		    }
-		}
-	    }
-	};
-
-	var geoChart = new Chart(geoCanvas, config);
     }
 
     /*********************************
