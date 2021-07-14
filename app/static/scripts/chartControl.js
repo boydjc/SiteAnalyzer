@@ -7,32 +7,19 @@ document.addEventListener("DOMContentLoaded", function(){
             super.draw(arguments);
 	
 	    const meta = this.getMeta();
-	
-	    //this.drawWashington('100');
 
 	    const ctx = this.chart.ctx;
+	
+	    this.drawWashington(ctx, '100');
+	    this.drawOregon(ctx, '100');
 
-	    ctx.save();
-
-	    ctx.strokeStyle = 'red';
-	    ctx.lineWidth = 3;
-	    ctx.moveTo(333, 98);
-	    ctx.lineTo(345, 103); ctx.lineTo(343.5, 115); ctx.lineTo(347, 120);
-	    ctx.lineTo(360, 119); ctx.lineTo(366, 121); ctx.lineTo(371, 121);
-	    ctx.lineTo(375, 123); ctx.lineTo(385, 122); ctx.lineTo(391, 123);
-	    ctx.lineTo(400, 122); ctx.lineTo(415, 125); ctx.lineTo(425, 126);
-
-	    ctx.stroke();
-	    ctx.restore();
-	 }
+	}
 
 	// blueColorDepth is a value between 0 and 
 	// 255 which corresponds to how many values we
 	// have in the state. Ligher color means less values
-	drawWashington(blueColorDepth) {
-            // first point is washington
-	    const ctx = this.chart.ctx;
-
+	drawWashington(ctx, blueColorDepth) {
+  
 	    ctx.save();
 
 	    ctx.strokeStyle = 'rgb(0, 0, ' + blueColorDepth + ')';
@@ -54,8 +41,30 @@ document.addEventListener("DOMContentLoaded", function(){
 	    ctx.stroke();
 	    ctx.fill();
 	    ctx.restore();
-	    // end first point
+	}
 
+	drawOregon(ctx, blueColorDepth) {
+
+	    ctx.save();
+
+	    ctx.strokeStyle = 'rgb(0, 0, ' + blueColorDepth + ')';
+	    ctx.fillStyle = 'rgb(0, 0, ' + blueColorDepth + ')';
+	    ctx.lineWidth = 3;
+	    ctx.moveTo(333, 100);
+	    ctx.lineTo(345, 103); ctx.lineTo(343.5, 115); ctx.lineTo(347, 120);
+	    ctx.lineTo(360, 119); ctx.lineTo(366, 121); ctx.lineTo(371, 121);
+	    ctx.lineTo(375, 123); ctx.lineTo(385, 122); ctx.lineTo(391, 123);
+	    ctx.lineTo(400, 122); ctx.lineTo(415, 125); ctx.lineTo(424, 126);
+	    ctx.lineTo(405, 208); ctx.lineTo(303, 181); ctx.lineTo(301, 171);
+	    ctx.lineTo(305, 167); ctx.lineTo(303, 166); ctx.lineTo(305, 155);
+	    ctx.lineTo(312, 154); ctx.lineTo(308, 150); ctx.lineTo(313, 148);
+	    ctx.lineTo(316, 140); ctx.lineTo(316, 134); ctx.lineTo(321, 129); 
+	    ctx.lineTo(319, 124);ctx.lineTo(321, 120); ctx.lineTo(327, 112);
+	    ctx.lineTo(326, 105);
+	    ctx.closePath();
+	    ctx.stroke();
+	    ctx.fill();
+	    ctx.restore();
 	}
     }
 
