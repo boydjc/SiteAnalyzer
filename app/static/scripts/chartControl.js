@@ -8,7 +8,22 @@ document.addEventListener("DOMContentLoaded", function(){
 	
 	    const meta = this.getMeta();
 	
-	    this.drawWashington('100');
+	    //this.drawWashington('100');
+
+	    const ctx = this.chart.ctx;
+
+	    ctx.save();
+
+	    ctx.strokeStyle = 'red';
+	    ctx.lineWidth = 3;
+	    ctx.moveTo(333, 98);
+	    ctx.lineTo(345, 103); ctx.lineTo(343.5, 115); ctx.lineTo(347, 120);
+	    ctx.lineTo(360, 119); ctx.lineTo(366, 121); ctx.lineTo(371, 121);
+	    ctx.lineTo(375, 123); ctx.lineTo(385, 122); ctx.lineTo(391, 123);
+	    ctx.lineTo(400, 122); ctx.lineTo(415, 125); ctx.lineTo(425, 126);
+
+	    ctx.stroke();
+	    ctx.restore();
 	 }
 
 	// blueColorDepth is a value between 0 and 
