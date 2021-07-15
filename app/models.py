@@ -28,6 +28,7 @@ class Connection(db.Model):
     dateVisited = db.Column(db.Date(), index=True, unique=False)
     ipAddress = db.Column(db.String(100), index=True, unique=False)
     country = db.Column(db.String(100), index=True, unique=False)
+    state = db.Column(db.String(100), index=True, unique=False)
     city = db.Column(db.String(100), index=True, unique=False)
     lat = db.Column(db.Numeric(), index=True, unique=False)
     lon = db.Column(db.Numeric(), index=True, unique=False)

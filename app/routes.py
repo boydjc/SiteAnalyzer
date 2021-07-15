@@ -31,6 +31,7 @@ def index():
         visitorCon = Connection(ipAddress=visitorIP, 
                 dateVisited=date.today(),
                 country=res['country'],
+                state=res['regionName'],
                 city=res['city'],
                 lat=res['lat'],
                 lon=res['lon'],
