@@ -360,51 +360,63 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function drawGeoMap(connDataInput){
+	
+        const us = fetch ('https://unpkg.com/us-atlas/states-10m.json')
+	.then((r) => r.json())
+	.then((us) => {
 
-        fetch('https://unpkg.com/us-atlas/states-10m.json')
-	    .then((r) => r.json())
-	    .then((us) => {
-		const nation = ChartGeo.topojson.feature(us, us.objects.nation).features[0];
-		const states = ChartGeo.topojson.feature(us, us.objects.states).features;
+	    // Whole us for the outline
+	    const nation = ChartGeo.topojson.feature(us, us.objects.nation).features[0];
+	    // individual states
+	    const states = ChartGeo.topojson.feature(us, us.objects.states).features;
 
-		const chart = new Chart(document.getElementById('geoChart').getContext('2d'),{
-		    type: 'choropleth',
-		    data: {
-		        labels: states.map((d) => d.properties.name),
-			datasets: [
-			    {
-			        label: 'States',
-				outline: nation,
-				data: states.map((d) => ({
-				    feature: d,
-				    value: Math.random() * 11,
-				})),
-			    },
-			],
-		    },
+	    const alaska = states.find((d) => d.properties.name === 'Alaska');
 
-		    options: {
-			plugins: {
+	    const stateLabels = ['Alaska'];
+	    
+            const data = {
+                labels: stateLabels,
+	        datasets: [{
+		    label: 'States',
+		    //backgroundColor: 'rgb(0, 0, 255)',
+		    //borderColor: 'rgb(0, 0, 255)',
+		    outline: nation,
+		    showOutline: true,
+		    data: [
+		        {
+			    value: 0.4,
+			    feature: alaska
+		        }
+		    ]	
+	        }]
+	    };
+
+	    const config = {
+	        type: 'choropleth',
+	        data,
+                options: {
+	            plugins: {
+		        legend: {
+		            display: false,
+		        },
+	            },
+		    scales: {
+		        xy: {
+		            projection: 'albersUsa',
+		        },
+		        color: {
+		            quantize: 8,
 			    legend: {
-			        display: false,
+			        position: 'bottom-right',
+			        align: 'right',
 			    },
-			},
-
-			scales: {
-			    xy: {
-			        projection: 'albersUsa',
-			    },
-			    color: {
-			        quantize: 5,
-				legend: {
-				    position: 'bottom-right',
-				    align: 'right',
-				},
-			    },
-			},
+		        },
 		    },
-		});
-	    });
+	        },
+	    };
+
+	    const chart = new Chart(document.getElementById('geoChart').getContext('2d'), config);
+	});
     }
 
     /*********************************
