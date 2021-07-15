@@ -378,8 +378,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 labels: stateLabels,
 	        datasets: [{
 		    label: 'States',
-		    //backgroundColor: 'rgb(0, 0, 255)',
-		    //borderColor: 'rgb(0, 0, 255)',
 		    outline: nation,
 		    showOutline: true,
 		    data: [
