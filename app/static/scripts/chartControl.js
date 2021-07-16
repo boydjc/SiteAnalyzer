@@ -361,8 +361,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function drawGeoMap(connDataInput){
 
-	console.log(connDataInput);
-
 	var connDataKeys = Object.keys(connDataInput);
 	
         const us = fetch ('https://unpkg.com/us-atlas/states-10m.json')
@@ -406,6 +404,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	        datasets: [{
 		    label: 'States',
 		    outline: nation,
+		    outlineBorderColor: "#000000",
 		    showOutline: true,
 		    data: stateData
 	        }]
@@ -425,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		            projection: 'albersUsa',
 		        },
 		        color: {
-		            quantize: 8,
+		            quantize: 10,
 			    legend: {
 			        position: 'bottom-right',
 			        align: 'right',
