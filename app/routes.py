@@ -100,6 +100,7 @@ def data():
             "dateVisited" : connection.dateVisited.__str__(),
             "ipAddress" : connection.ipAddress,
             "country" : connection.country,
+            "state" : connection.state,
             "city" : connection.city,
             "lat" : str(connection.lat),
             "lon" : str(connection.lon),

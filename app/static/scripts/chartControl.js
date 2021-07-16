@@ -360,6 +360,10 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function drawGeoMap(connDataInput){
+
+	console.log(connDataInput);
+
+	var connDataKeys = Object.keys(connDataInput);
 	
         const us = fetch ('https://unpkg.com/us-atlas/states-10m.json')
 	.then((r) => r.json())
@@ -370,9 +374,34 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // individual states
 	    const states = ChartGeo.topojson.feature(us, us.objects.states).features;
 
-	    const alaska = states.find((d) => d.properties.name === 'Alaska');
+	    const stateLabels = [];
 
-	    const stateLabels = ['Alaska'];
+	    const stateData = [];
+
+	    const stateCount = {};
+	    
+	    // store the labels for each state we have and then count them
+	    for(var i=0; i<=connDataKeys-1; i++) {
+		if(connDataInput[connDataKeys[i]].state){
+		    if (!(connDataInput[connDataKeys[i]].state in stateLabels)){
+		        // store if not there
+		        stateLabels.push(connDataInput[connDataKeys[i]].state);
+		        stateCount[connDataInput[connDataKeys[i]].state] = 1;
+		    }else{
+		        // count +1 if it is
+		        stateCount[connDataInput[connDataKeys[i]].state] += 1;
+		    }
+		}
+	    }
+	   
+	    // once we have the correct count for each state, make the data object
+	    
+	    for(var i=0; i<stateLabels.length; i++){
+                stateData.push({feature: state.find((d) => d.properties.name === stateLabels[i]),
+			        value: stateCount[stateLabels[i]]});
+	    }
+
+	    console.log(stateLabels);
 	    
             const data = {
                 labels: stateLabels,
@@ -380,12 +409,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		    label: 'States',
 		    outline: nation,
 		    showOutline: true,
-		    data: [
-		        {
-			    value: 0.4,
-			    feature: alaska
-		        }
-		    ]	
+		    data: stateData
 	        }]
 	    };
 
