@@ -381,15 +381,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	    const stateCount = {};
 	    
 	    // store the labels for each state we have and then count them
-	    for(var i=0; i<=connDataKeys-1; i++) {
+	    for(var i=0; i<=connDataKeys.length-1; i++) {
 		if(connDataInput[connDataKeys[i]].state){
-		    if (!(connDataInput[connDataKeys[i]].state in stateLabels)){
-		        // store if not there
-		        stateLabels.push(connDataInput[connDataKeys[i]].state);
-		        stateCount[connDataInput[connDataKeys[i]].state] = 1;
+		    if(stateLabels.includes(connDataInput[connDataKeys[i]].state)){
+			// + 1 if it is there
+			stateCount[connDataInput[connDataKeys[i]].state] += 1;
 		    }else{
-		        // count +1 if it is
-		        stateCount[connDataInput[connDataKeys[i]].state] += 1;
+			// store it if its not
+		        stateLabels.push(connDataInput[connDataKeys[i]].state);
+			stateCount[connDataInput[connDataKeys[i]].state] = 1;
 		    }
 		}
 	    }
@@ -397,11 +397,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	    // once we have the correct count for each state, make the data object
 	    
 	    for(var i=0; i<stateLabels.length; i++){
-                stateData.push({feature: state.find((d) => d.properties.name === stateLabels[i]),
+                stateData.push({feature: states.find((d) => d.properties.name === stateLabels[i]),
 			        value: stateCount[stateLabels[i]]});
 	    }
-
-	    console.log(stateLabels);
 	    
             const data = {
                 labels: stateLabels,
