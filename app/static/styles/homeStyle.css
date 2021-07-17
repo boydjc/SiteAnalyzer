@@ -16,7 +16,7 @@ body {
     background-color: #FFFFFF;
 }
 
-#navBar h2 {
+#header h2 {
     margin-left: 2em;
     margin-top: 0.1em;
     padding-top: 0.7em;
@@ -27,7 +27,7 @@ body {
     animation-fill-mode: backwards;
 }
 
-#navBar a {
+#header a {
     border: 2px solid black;
     border-radius: 2em;
     margin-top: -3.5em;
@@ -114,7 +114,7 @@ body {
 
 #geoMapDiv {
     width: 81em;
-    height: 41em;
+    height: 45em;
     border: 2px solid black;
     float: left;
     margin-top: 1em;

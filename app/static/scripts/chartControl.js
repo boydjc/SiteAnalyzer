@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	    if(Chart.getChart('geoChart')){
 		Chart.getChart('geoChart').destroy();
-		drawGeoMap(connectionData);
+		drawGeoMap(connectionData, 'us');
 	    }else{
-		drawGeoMap(connectionData);
+		drawGeoMap(connectionData, 'us');
 	    }
 	}
 	xhttp.open("GET", "/data", true);
@@ -359,85 +359,90 @@ document.addEventListener("DOMContentLoaded", function(){
 	}	
     }
 
-    function drawGeoMap(connDataInput){
+    // second parameter is different nations
+    // either worldwide or a specific country
+    function drawGeoMap(connDataInput, nation){
 
 	var connDataKeys = Object.keys(connDataInput);
+
+	if(nation === "us"){
 	
-        const us = fetch ('https://unpkg.com/us-atlas/states-10m.json')
-	.then((r) => r.json())
-	.then((us) => {
+            const us = fetch ('https://unpkg.com/us-atlas/states-10m.json')
+	    .then((r) => r.json())
+	    .then((us) => {
 
-	    // Whole us for the outline
-	    const nation = ChartGeo.topojson.feature(us, us.objects.nation).features[0];
-	    // individual states
-	    const states = ChartGeo.topojson.feature(us, us.objects.states).features;
+	        // Whole US for the outline
+	        const nation = ChartGeo.topojson.feature(us, us.objects.nation).features[0];
+	        // individual states
+	        const states = ChartGeo.topojson.feature(us, us.objects.states).features;
 
-	    const stateLabels = [];
+	        const stateLabels = [];
 
-	    const stateData = [];
+	        const stateData = [];
 
-	    const stateCount = {};
+	        const stateCount = {};
 	    
-	    // store the labels for each state we have and then count them
-	    for(var i=0; i<=connDataKeys.length-1; i++) {
-		if(connDataInput[connDataKeys[i]].state){
-		    if(stateLabels.includes(connDataInput[connDataKeys[i]].state)){
-			// + 1 if it is there
-			stateCount[connDataInput[connDataKeys[i]].state] += 1;
-		    }else{
-			// store it if its not
-		        stateLabels.push(connDataInput[connDataKeys[i]].state);
-			stateCount[connDataInput[connDataKeys[i]].state] = 1;
+	        // store the labels for each state we have and then count them
+	        for(var i=0; i<=connDataKeys.length-1; i++) {
+		    if(connDataInput[connDataKeys[i]].state){
+		        if(stateLabels.includes(connDataInput[connDataKeys[i]].state)){
+			    // + 1 if it is there
+			    stateCount[connDataInput[connDataKeys[i]].state] += 1;
+		        }else{
+			    // store it if its not
+		            stateLabels.push(connDataInput[connDataKeys[i]].state);
+			    stateCount[connDataInput[connDataKeys[i]].state] = 1;
+		        }
 		    }
-		}
-	    }
+	        }
 	   
-	    // once we have the correct count for each state, make the data object
+	        // once we have the correct count for each state, make the data object
 	    
-	    for(var i=0; i<stateLabels.length; i++){
-                stateData.push({feature: states.find((d) => d.properties.name === stateLabels[i]),
-			        value: stateCount[stateLabels[i]]});
-	    }
+	        for(var i=0; i<stateLabels.length; i++){
+                    stateData.push({feature: states.find((d) => d.properties.name === stateLabels[i]),
+	    	                value: stateCount[stateLabels[i]]});
+	        }
 	    
-            const data = {
-                labels: stateLabels,
-	        datasets: [{
-		    label: 'States',
-		    outline: nation,
-		    outlineBorderColor: "#000000",
-		    showOutline: true,
-		    data: stateData
-	        }]
-	    };
+                const data = {
+                    labels: stateLabels,
+	            datasets: [{
+		        label: 'States',
+		        outline: nation,
+		        outlineBorderColor: "#000000",
+		        showOutline: true,
+		        data: stateData
+	            }]
+	        };
 
-	    const config = {
-	        type: 'choropleth',
-	        data,
-                options: {
-	            plugins: {
-		        legend: {
-		            display: false,
+	        const config = {
+	            type: 'choropleth',
+	            data,
+                    options: {
+	                plugins: {
+		            legend: {
+		                display: false,
+		            },
+	                },
+		        scales: {
+		            xy: {
+		                projection: 'albersUsa',
+		            },
+		            color: {
+		                quantize: 10,
+			        // changes the color scale for the data
+			        interpolate: 'blues',
+			        legend: {
+			            position: 'bottom-right',
+			            align: 'right',
+			        },
+		            },
 		        },
 	            },
-		    scales: {
-		        xy: {
-		            projection: 'albersUsa',
-		        },
-		        color: {
-		            quantize: 10,
-			    // changes the color scale for the data
-			    interpolate: 'blues',
-			    legend: {
-			        position: 'bottom-right',
-			        align: 'right',
-			    },
-		        },
-		    },
-	        },
-	    };
+	        };
 
-	    const chart = new Chart(document.getElementById('geoChart').getContext('2d'), config);
-	});
+	        const chart = new Chart(document.getElementById('geoChart').getContext('2d'), config);
+	    });
+	}
     }
 
     /*********************************
