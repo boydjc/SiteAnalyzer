@@ -8,6 +8,26 @@
     }
 }
 
+@keyframes slideInLeft {
+    from {
+        margin-left: -13em;
+    }
+
+    to {
+        margin-left: 0em;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        margin-left: 0em;
+    }
+
+    to {
+        margin-left: -13em;
+    }
+}
+
 .divHeaders {
     text-align: center;
 }
@@ -16,18 +36,48 @@ body {
     background-color: #FFFFFF;
 }
 
+#navBar {
+    position: fixed;
+    width: 10em;
+    height: 30em;
+    margin-top: 6em;
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 1em;
+}
+
+.navBarHide {
+    animation-name: slideOutLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.navBarShow {
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
 #header {
     position: sticky;
     top: 0;
     background-color: #FFFFFF;
     height: 4em;
+    width: 83.5em;
+    border-bottom: 2px solid black;
+}
+
+#header a:active {
+    box-shadow: 0px 0px #000000;
+    transform: translate(0em, 0.1em);
 }
 
 #header h2 {
     margin-left: 2em;
-    margin-top: -0.1em;
+    margin-top: 0.1em;
     padding-top: 0.5em;
     font-size: 2em;
+    float: left;
     animation-name: fadeIn;
     animation-duration: 1.2s;
     animation-delay: 0.2s;
@@ -37,8 +87,7 @@ body {
 #header a {
     border: 2px solid black;
     border-radius: 2em;
-    margin-top: -3.5em;
-    float: right;
+    margin-top: 0.7em;
     padding-top: 0.3em;
     padding-bottom: 0.1em;
     padding-left: 0.8em;
@@ -50,22 +99,19 @@ body {
     transition: box-shadow 150ms, transform 150ms;
 }
 
-#logoutButton {
-    margin-right: 1em;
+#navButton {
+    float: left;
+    margin-left: 1em;
 }
 
 #refreshButton {
-    margin-right: 6em;
+    margin-right: 1em;
+    float: right;
 }
 
-#header a:active {
-    box-shadow: 0px 0px #000000;
-    transform: translate(0em, 0.1em);
-}
-
-#header {
-    width: 83.5em;
-    border-bottom: 2px solid black;
+#logoutButton {
+    margin-right: 1em;
+    float: right;
 }
 
 #mainCont {
@@ -76,7 +122,7 @@ body {
 #hitChartDiv {
     float: left;
     margin-top: 1em;
-    margin-left: 1em;
+    margin-left: -20em;
     width: 50em;
     height: 28em;
     border: 2px solid black;

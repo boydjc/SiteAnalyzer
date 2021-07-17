@@ -4,16 +4,21 @@
 	<title>{{ title }}</title>
 	<link rel="stylesheet" href="{{url_for('static',filename='styles/homeStyle.css') }}">
 	<script src="{{url_for('static',filename='scripts/chartControl.js')}}"></script>
+	<script src="{{url_for('static',filename='scripts/siteController.js')}}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo@3.1.0/build/index.umd.min.js"></script>
     </head>
     <body>
-	<div id="mainCont">
-	    <div id="header">
+	<div id="navBar" class="navBarHide">
+	    <p>This is the navbar</p>
+	</div>
+	<div id="header">
+		<a href="javascript:void(0)" id="navButton">Nav</a>
 		<h2>Hello, {{ current_user.username }}!</h2>
-		<a href="#" id="refreshButton">Refresh Data</a>
-		<a href="/logout" id="logoutButton">Logout</a>
-	    </div>
+                <a href="/logout" id="logoutButton">Logout</a>
+		<a href="javascript:void(0)" id="refreshButton">Refresh Data</a>
+	</div>
+	<div id="mainCont">
 	    <div id="hitChartDiv">
 	        <h2 class="divHeaders">Site Hits</h2>
 	        <form action="#">
