@@ -361,6 +361,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // second parameter is different nations
     // either worldwide or a specific country
+    // TODO: implement different maps for 2nd parameter
     function drawGeoMap(connDataInput, nation){
 
 	var connDataKeys = Object.keys(connDataInput);
