@@ -16,10 +16,17 @@ body {
     background-color: #FFFFFF;
 }
 
+#header {
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    height: 4em;
+}
+
 #header h2 {
     margin-left: 2em;
-    margin-top: 0.1em;
-    padding-top: 0.7em;
+    margin-top: -0.1em;
+    padding-top: 0.5em;
     font-size: 2em;
     animation-name: fadeIn;
     animation-duration: 1.2s;
