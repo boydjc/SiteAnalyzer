@@ -425,6 +425,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		        },
 		        color: {
 		            quantize: 10,
+			    // changes the color scale for the data
+			    interpolate: 'blues',
 			    legend: {
 			        position: 'bottom-right',
 			        align: 'right',

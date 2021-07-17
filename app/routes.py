@@ -26,6 +26,8 @@ def index():
         res = requests.get('http://demo.ip-api.com/json/' + visitorIP + 
                 '?fields=66842623&lang=en').json() 
 
+        print(res)
+
         visitorCon = Connection(ipAddress=visitorIP, 
                 dateVisited=date.today(),
                 country=res['country'],
