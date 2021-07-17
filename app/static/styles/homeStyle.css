@@ -61,6 +61,11 @@ body {
     border-bottom: 2px solid black;
 }
 
+#mainCont {
+    width: 83.5em;
+    height: 79em;
+}
+
 #hitChartDiv {
     float: left;
     margin-top: 1em;
@@ -109,7 +114,7 @@ body {
 
 #geoMapDiv {
     width: 81em;
-    height: 40em;
+    height: 41em;
     border: 2px solid black;
     float: left;
     margin-top: 1em;

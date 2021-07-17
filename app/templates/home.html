@@ -8,35 +8,37 @@
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo@3.1.0/build/index.umd.min.js"></script>
     </head>
     <body>
-	<div id="navBar">
-	    <h2>Hello, {{ current_user.username }}!</h2>
-	    <a href="#" id="refreshButton">Refresh Data</a>
-	    <a href="/logout" id="logoutButton">Logout</a>
-	</div>
-	<div id="hitChartDiv">
-	    <h2 class="divHeaders">Site Hits</h2>
-	    <form action="#">
-		<select id="chartTimeSeries" name="chartTimeSeries">
-		    <option value="monthly">Monthly</option>
-		    <option value="daily">Daily</option>
-		</select>
-	    </form>
-	    <canvas id="myChart"></canvas>
-	</div>
+	<div id="mainCont">
+	    <div id="navBar">
+		<h2>Hello, {{ current_user.username }}!</h2>
+		<a href="#" id="refreshButton">Refresh Data</a>
+		<a href="/logout" id="logoutButton">Logout</a>
+	    </div>
+	    <div id="hitChartDiv">
+	        <h2 class="divHeaders">Site Hits</h2>
+	        <form action="#">
+		    <select id="chartTimeSeries" name="chartTimeSeries">
+		        <option value="monthly">Monthly</option>
+		        <option value="daily">Daily</option>
+		    </select>
+	        </form>
+	        <canvas id="myChart"></canvas>
+	    </div>
 	
-	<div id="topVisitorDiv">
-	    <h2 class="divHeaders">Top Visitors</h2>
-	    <table id="topVisitorTable">
-		<tr>
-		    <th>IP</th>
-		    <th>Visits</th>
-		</tr>
-	    </table>
-	</div>
+	    <div id="topVisitorDiv">
+	        <h2 class="divHeaders">Top Visitors</h2>
+	        <table id="topVisitorTable">
+		    <tr>
+		        <th>IP</th>
+		        <th>Visits</th>
+		    </tr>
+	        </table>
+	    </div>
 
-	<div id="geoMapDiv">
-	    <canvas id="geoChart">
-	    </canvas>
+	    <div id="geoMapDiv">
+	        <canvas id="geoChart">
+	        </canvas>
+	    </div>
 	</div>
     </body>
 </html>
