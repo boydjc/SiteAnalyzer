@@ -36,28 +36,6 @@ body {
     background-color: #FFFFFF;
 }
 
-#navBar {
-    position: fixed;
-    width: 10em;
-    height: 30em;
-    margin-top: 6em;
-    background-color: #FFFFFF;
-    border: 2px solid #000000;
-    border-radius: 1em;
-}
-
-.navBarHide {
-    animation-name: slideOutLeft;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.navBarShow {
-    animation-name: slideInLeft;
-    animation-duration: 1s;
-    animation-fill-mode: backwards;
-}
-
 #header {
     position: sticky;
     top: 0;
@@ -97,11 +75,6 @@ body {
     font-size: 1.2em;
     box-shadow: 0px 2px #000000;
     transition: box-shadow 150ms, transform 150ms;
-}
-
-#navButton {
-    float: left;
-    margin-left: 1em;
 }
 
 #refreshButton {
