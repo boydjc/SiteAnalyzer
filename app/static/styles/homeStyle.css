@@ -112,6 +112,11 @@ body {
     width: 30em;
     height: 28em;
     border: 2px solid black;
+    overflow-y: auto;
+}
+
+#topVisitorDiv h2 {
+    position: sticky;
 }
 
 #topVisitorDiv table {
